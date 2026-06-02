@@ -6,7 +6,7 @@
     <title>Delícias da Vovó | Padaria & Confeitaria</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200..700;1,9..144,200..700&family=Libre+Baskerville:ital,wght@0,400;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -32,7 +32,8 @@
             },
             fontFamily: {
               sans: ['"Plus Jakarta Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-              serif: ['"Fraunces"', 'ui-serif', 'Georgia', 'serif'],
+              serif: ['"Libre Baskerville"', 'ui-serif', 'Georgia', 'serif'],
+              display: ['"Fraunces"', 'ui-serif', 'Georgia', 'serif'],
             }
           }
         }
@@ -43,6 +44,15 @@
         font-family: "Plus Jakarta Sans", sans-serif;
         background-color: #faf7f2;
         color: #2d2722;
+      }
+      b,
+      strong,
+      .font-medium,
+      .font-semibold,
+      .font-bold,
+      .font-extrabold,
+      .font-black {
+        font-weight: 400 !important;
       }
       ::-webkit-scrollbar {
         width: 8px;
@@ -61,7 +71,7 @@
   </head>
   <body class="bg-[#faf7f2] selection:bg-primary-200">
     <!-- Header sticky -->
-    <header id="main-header" class="fixed top-0 left-0 right-0 z-40 transition-all duration-300 bg-[#faf7f2]/95 backdrop-blur-md border-b border-primary-100 py-3.5">
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-40 transition-all duration-300 bg-[#faf7f2]/95 backdrop-blur-md border-b border-primary-200/70 py-3.5">
       <div class="max-w-7xl mx-auto px-6 sm:px-8 flex items-center justify-between">
         <a href="#inicio" class="flex items-center space-x-3">
           <div class="h-10 w-10 rounded-full flex items-center justify-center border border-primary-200 text-primary-800 bg-primary-100/70">
@@ -74,22 +84,23 @@
         </a>
 
         <!-- Links (Desktop) -->
-        <nav class="hidden md:flex items-center space-x-8">
-          <a href="#inicio" class="text-xs uppercase tracking-widest font-normal text-text-light hover:text-primary-700 transition-colors py-2">Início</a>
-          <a href="#unidades" class="text-xs uppercase tracking-widest font-normal text-text-light hover:text-primary-700 transition-colors py-2">Unidades</a>
-          <a href="#historia" class="text-xs uppercase tracking-widest font-normal text-text-light hover:text-primary-700 transition-colors py-2">Nossa História</a>
-          <a href="#cardapio" class="text-xs uppercase tracking-widest font-normal text-text-light hover:text-primary-700 transition-colors py-2">Destaques</a>
-          <a href="#depoimentos" class="text-xs uppercase tracking-widest font-normal text-text-light hover:text-primary-700 transition-colors py-2">Histórias</a>
-          <a href="#contato" class="text-xs uppercase tracking-widest font-normal text-text-light hover:text-primary-700 transition-colors py-2">Fale Conosco</a>
+        <nav class="hidden xl:flex items-center space-x-6">
+          <a href="#inicio" class="text-xs uppercase tracking-widest font-normal text-text-light hover:text-primary-800 transition-colors py-2">Início</a>
+          <a href="#unidades" class="text-xs uppercase tracking-widest font-normal text-text-light hover:text-primary-800 transition-colors py-2">Unidades</a>
+          <a href="#servicos" class="text-xs uppercase tracking-widest font-normal text-text-light hover:text-primary-800 transition-colors py-2">Serviços</a>
+          <a href="#historia" class="text-xs uppercase tracking-widest font-normal text-text-light hover:text-primary-800 transition-colors py-2">Nossa História</a>
+          <a href="#cardapio" class="text-xs uppercase tracking-widest font-normal text-text-light hover:text-primary-800 transition-colors py-2">Destaques</a>
+          <a href="#depoimentos" class="text-xs uppercase tracking-widest font-normal text-text-light hover:text-primary-800 transition-colors py-2">Histórias</a>
+          <a href="#contato" class="text-xs uppercase tracking-widest font-normal text-text-light hover:text-primary-800 transition-colors py-2">Fale Conosco</a>
         </nav>
 
-        <div class="hidden md:block">
-          <a href="#cardapio" class="text-xs font-normal uppercase tracking-widest px-5 py-2.5 rounded-full border border-primary-900 bg-primary-900 text-white hover:bg-primary-800 transition-all duration-300">
+        <div class="hidden xl:block">
+          <a href="#cardapio" class="text-xs font-normal uppercase tracking-widest px-5 py-2.5 rounded-full border border-primary-300 bg-primary-100/70 text-primary-950 hover:bg-primary-200 transition-all duration-300">
             Encomendar
           </a>
         </div>
 
-        <button id="menu-toggle-btn" class="md:hidden p-2 rounded-lg text-primary-900 hover:bg-primary-100/50 outline-none">
+        <button id="menu-toggle-btn" class="xl:hidden p-2 rounded-lg text-primary-900 hover:bg-primary-100/70 outline-none">
           <i data-lucide="menu" class="h-6 w-6"></i>
         </button>
       </div>
@@ -107,6 +118,7 @@
       <nav class="flex flex-col space-y-3.5">
         <a href="#inicio" class="mobile-nav-link block py-2.5 px-3 text-sm font-normal text-text-dark hover:bg-primary-100 hover:text-primary-800 transition-all rounded-lg uppercase tracking-wider text-xs">Início</a>
         <a href="#unidades" class="mobile-nav-link block py-2.5 px-3 text-sm font-normal text-text-dark hover:bg-primary-100 hover:text-primary-800 transition-all rounded-lg uppercase tracking-wider text-xs">Unidades</a>
+        <a href="#servicos" class="mobile-nav-link block py-2.5 px-3 text-sm font-normal text-text-dark hover:bg-primary-100 hover:text-primary-800 transition-all rounded-lg uppercase tracking-wider text-xs">Serviços</a>
         <a href="#historia" class="mobile-nav-link block py-2.5 px-3 text-sm font-normal text-text-dark hover:bg-primary-100 hover:text-primary-800 transition-all rounded-lg uppercase tracking-wider text-xs">Nossa História</a>
         <a href="#cardapio" class="mobile-nav-link block py-2.5 px-3 text-sm font-normal text-text-dark hover:bg-primary-100 hover:text-primary-800 transition-all rounded-lg uppercase tracking-wider text-xs">Destaques</a>
         <a href="#depoimentos" class="mobile-nav-link block py-2.5 px-3 text-sm font-normal text-text-dark hover:bg-primary-100 hover:text-primary-800 transition-all rounded-lg uppercase tracking-wider text-xs">Histórias</a>
@@ -120,36 +132,36 @@
     </div>
 
     <!-- Hero Section -->
-    <section id="inicio" class="relative min-h-screen flex items-center justify-center pt-24 pb-20 overflow-hidden bg-[#faf7f2]">
+    <section id="inicio" class="relative min-h-screen flex items-end justify-center pt-24 pb-[12vh] sm:pb-[14vh] overflow-hidden bg-[#faf7f2]">
       <div class="absolute inset-0 z-0">
         <img 
           src="https://res.cloudinary.com/ds53z2vv8/image/upload/v1780353080/copy_of_img_1213_of0ppv.jpg" 
           alt="Pães artesanais na cestaria" 
-          class="w-full h-full object-cover object-center opacity-85 scale-100 transition-transform duration-1000"
+          class="w-full h-full object-cover object-center scale-100 transition-transform duration-1000"
         />
-        <div class="absolute inset-0 bg-gradient-to-t from-[#faf7f2] via-[#faf7f2]/55 to-[#faf7f2]/20"></div>
-        <div class="absolute inset-0 bg-white/5"></div>
+        <div class="absolute inset-0 bg-black/38"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/58 via-black/16 to-black/26"></div>
       </div>
 
       <div class="relative z-10 max-w-5xl mx-auto px-6 text-center space-y-8">
         <div class="flex justify-center items-center space-x-3">
-          <div class="h-px w-8 bg-primary-400/40"></div>
-          <span class="font-sans text-[10px] sm:text-xs uppercase tracking-[0.35em] font-normal text-primary-800 block">
+          <div class="h-px w-8 bg-white/55"></div>
+          <span class="font-sans text-[10px] sm:text-xs uppercase tracking-[0.35em] font-normal text-white/90 block">
             Fazendo delícias desde 2005
           </span>
-          <div class="h-px w-8 bg-primary-400/40"></div>
+          <div class="h-px w-8 bg-white/55"></div>
         </div>
 
-        <h1 class="text-5xl sm:text-7xl lg:text-8xl font-serif font-light text-primary-950 tracking-[0.06em] leading-[1.1] max-w-4xl mx-auto normal-case">
+        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-display font-extralight text-white/95 tracking-[0.06em] leading-[1.1] max-w-4xl mx-auto normal-case">
           Paixão em servir
         </h1>
 
-        <p class="text-text-light text-sm sm:text-base lg:text-lg max-w-xl mx-auto leading-relaxed font-light">
-          Tradição familiar da <span class="italic font-serif font-medium text-primary-800">Vovó Neusa</span>, receitas que contam histórias inspiradoras e um capricho artesanal único na cidade.
+        <p class="text-white/90 text-sm sm:text-base lg:text-lg max-w-xl mx-auto leading-relaxed font-light">
+          Tradição familiar da <span class="italic font-serif font-medium text-white">Vovó Neusa</span>, receitas que contam histórias inspiradoras e um capricho artesanal único na cidade.
         </p>
 
         <div class="pt-4">
-          <a href="#cardapio" class="inline-block border border-primary-900 hover:border-primary-950 px-9 py-4 text-xs font-normal tracking-[0.25em] text-primary-950 uppercase bg-primary-800/10 hover:bg-primary-900 hover:text-white transition-all duration-300 rounded-full shadow-md">
+          <a href="#cardapio" class="inline-block border border-white/80 hover:border-white px-9 py-4 text-xs font-normal tracking-[0.25em] text-white uppercase bg-black/25 hover:bg-white hover:text-primary-950 transition-all duration-300 rounded-full shadow-md">
             Explorar o Cardápio
           </a>
         </div>
@@ -163,7 +175,7 @@
           <i data-lucide="map-pin" class="h-3 w-3"></i>
           <span>Nossos Espaços</span>
         </div>
-        <h2 class="text-4xl sm:text-5xl font-serif font-medium text-primary-950 tracking-tight">
+        <h2 class="text-4xl sm:text-5xl font-display font-light text-primary-950 tracking-tight">
           Nossas Unidades
         </h2>
         <div class="w-16 h-[1.5px] bg-primary-400 mx-auto"></div>
@@ -180,7 +192,7 @@
             <div class="absolute inset-0 bg-gradient-to-t from-[#1a130e]/80 via-transparent to-transparent"></div>
             <div class="absolute bottom-6 left-6 right-6">
               <span class="text-[9px] uppercase tracking-[0.25em] font-normal text-primary-300 block mb-1">Onde tudo começou</span>
-              <h3 class="font-serif text-2xl font-medium text-white tracking-tight">Unidade Matriz</h3>
+              <h3 class="font-serif text-2xl font-light text-white tracking-tight">Unidade Matriz</h3>
             </div>
           </div>
           <div class="p-8 sm:p-10 space-y-6 flex-1 flex flex-col justify-between">
@@ -220,7 +232,7 @@
             <div class="absolute inset-0 bg-gradient-to-t from-[#1a130e]/80 via-transparent to-transparent"></div>
             <div class="absolute bottom-6 left-6 right-6">
               <span class="text-[9px] uppercase tracking-[0.25em] font-normal text-primary-300 block mb-1">Um refúgio acolhedor</span>
-              <h3 class="font-serif text-2xl font-medium text-white tracking-tight">Cafeteria Vila Nova</h3>
+              <h3 class="font-serif text-2xl font-light text-white tracking-tight">Cafeteria Vila Nova</h3>
             </div>
           </div>
           <div class="p-8 sm:p-10 space-y-6 flex-1 flex flex-col justify-between">
@@ -255,6 +267,66 @@
       </div>
     </section>
 
+    <!-- Serviços -->
+    <section id="servicos" class="scroll-mt-16 py-24 bg-[#f1ebe3] border-y border-primary-200/60">
+      <div class="max-w-7xl mx-auto px-6 sm:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+          <div class="inline-flex items-center space-x-2 bg-white/70 border border-primary-200 px-3 py-1 rounded-full text-[10px] font-normal tracking-[0.2em] text-primary-700 uppercase">
+            <i data-lucide="utensils" class="h-3 w-3"></i>
+            <span>Sabores & Encontros</span>
+          </div>
+          <h2 class="text-4xl sm:text-5xl font-display font-light text-primary-950 tracking-tight">
+            Nossos Serviços
+          </h2>
+          <div class="w-16 h-[1.5px] bg-primary-400 mx-auto"></div>
+          <p class="mt-4 text-text-light text-sm sm:text-base max-w-xl mx-auto leading-relaxed font-light">
+            Da mesa de sábado às celebrações especiais, preparamos cada experiência com o cuidado de sempre.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <article class="bg-white overflow-hidden border border-primary-200/70 rounded-[2rem]">
+            <div class="h-64 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1776267068270-5abc4a9483cc?auto=format&fit=crop&q=80&w=1200" alt="Mesa de café da manhã com pães e quitutes" class="w-full h-full object-cover" />
+            </div>
+            <div class="p-7 space-y-3">
+              <i data-lucide="coffee" class="h-5 w-5 text-primary-600"></i>
+              <h3 class="font-serif text-2xl font-light text-primary-950">Café por Quilo aos Sábados</h3>
+              <p class="text-xs sm:text-sm text-text-light leading-relaxed font-light">
+                Uma mesa caprichada com pães, bolos, quitutes e sabores caseiros para começar o fim de semana com calma.
+              </p>
+            </div>
+          </article>
+
+          <article class="bg-white overflow-hidden border border-primary-200/70 rounded-[2rem]">
+            <div class="h-64 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1756066234736-9db92f9a80c8?auto=format&fit=crop&q=80&w=1200" alt="Buffet de almoço com saladas e pratos variados" class="w-full h-full object-cover" />
+            </div>
+            <div class="p-7 space-y-3">
+              <i data-lucide="utensils" class="h-5 w-5 text-primary-600"></i>
+              <h3 class="font-serif text-2xl font-light text-primary-950">Buffet de Almoço</h3>
+              <p class="text-xs sm:text-sm text-text-light leading-relaxed font-light">
+                Receitas frescas e variadas para um almoço acolhedor, preparado com ingredientes selecionados.
+              </p>
+            </div>
+          </article>
+
+          <article class="bg-white overflow-hidden border border-primary-200/70 rounded-[2rem]">
+            <div class="h-64 overflow-hidden">
+              <img src="https://res.cloudinary.com/ds53z2vv8/image/upload/v1773768803/WhatsApp_Image_2026-03-17_at_14.29.44_1_zlp8x4.jpg" alt="Espaço preparado para eventos" class="w-full h-full object-cover" />
+            </div>
+            <div class="p-7 space-y-3">
+              <i data-lucide="party-popper" class="h-5 w-5 text-primary-600"></i>
+              <h3 class="font-serif text-2xl font-light text-primary-950">Espaço para Eventos</h3>
+              <p class="text-xs sm:text-sm text-text-light leading-relaxed font-light">
+                Um ambiente especial para aniversários, encontros e comemorações que merecem ser lembradas.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <!-- Nossa História -->
     <section id="historia" class="grid grid-cols-1 lg:grid-cols-12 min-h-[580px] overflow-hidden bg-[#faf7f2] border-y border-primary-100">
       <div class="lg:col-span-6 relative h-96 lg:h-auto min-h-[400px]">
@@ -265,7 +337,7 @@
         />
         <div class="absolute inset-0 bg-[#4c5c68]/15 mix-blend-multiply"></div>
         <div class="absolute -bottom-5 right-6 bg-[#1f1a15] text-[#ecdcb5] px-5 py-3 rounded-2xl border border-[#9b8054] shadow-xl max-w-[240px]">
-          <p class="font-serif text-sm italic leading-snug font-light">“Com afeto, cada receita carica a dedicação da Vovó.”</p>
+          <p class="font-display text-sm italic leading-snug font-light">“Com afeto, cada receita carica a dedicação da Vovó.”</p>
           <div class="mt-2 h-[1px] bg-[#9b8054]/30"></div>
           <div class="mt-1 flex items-center space-x-1">
             <i data-lucide="heart" class="h-3 w-3 text-red-400 fill-current"></i>
@@ -280,7 +352,7 @@
             <i data-lucide="sparkles" class="h-3 w-3"></i>
             <span>Legado & Lembrança</span>
           </div>
-          <h2 class="text-4xl sm:text-5xl font-serif font-light text-white tracking-wide leading-tight uppercase">
+          <h2 class="text-4xl sm:text-5xl font-display font-light text-white tracking-tight leading-tight">
             Nossa História
           </h2>
           <div class="w-16 h-[1.5px] bg-[#ecdcb5]"></div>
@@ -301,7 +373,7 @@
         <div class="pt-6 border-t border-white/10 flex items-center justify-between">
           <div>
             <span class="text-[10px] uppercase tracking-widest font-normal text-[#ecdcb5]/85 block mb-1">Cozinha Afetuosa</span>
-            <span class="font-serif text-xl font-light text-white italic block">Com afeto, Vovó Neusa & Família</span>
+            <span class="font-display text-xl font-light text-white italic block">Com afeto, Vovó Neusa & Família</span>
           </div>
         </div>
       </div>
@@ -314,7 +386,7 @@
           <i data-lucide="chef-hat" class="h-3 w-3"></i>
           <span>Seleção Especial</span>
         </div>
-        <h2 class="text-4xl sm:text-5xl font-serif font-medium text-primary-950 tracking-wide uppercase">
+        <h2 class="text-4xl sm:text-5xl font-display font-light text-primary-950 tracking-tight">
           Menu Destaques
         </h2>
         <div class="w-16 h-[1.5px] bg-primary-400 mx-auto"></div>
@@ -356,7 +428,7 @@
           <div class="lg:col-span-6 space-y-8">
             <div class="space-y-3">
               <span class="text-[9px] uppercase font-normal tracking-[0.2em] text-primary-600 block">Opinião de quem nos visita</span>
-              <h3 class="font-serif text-3xl font-medium text-primary-950">Histórias Acolhedoras</h3>
+              <h3 class="font-display text-3xl font-light text-primary-950 uppercase">Histórias Acolhedoras</h3>
               <div class="w-12 h-[1px] bg-primary-400"></div>
             </div>
 
@@ -406,7 +478,7 @@
           <!-- Right Column (Contact & Feedback Form) -->
           <div id="contato" class="lg:col-span-6 bg-[#faf7f2] p-8 sm:p-10 rounded-[2.5rem] border border-primary-200/50 space-y-8">
             <div class="space-y-1">
-              <h4 class="font-serif text-2xl font-medium text-primary-950">Deixe uma mensagem</h4>
+              <h4 class="font-serif text-2xl font-light text-primary-950">Deixe uma mensagem</h4>
               <p class="text-xs text-text-light leading-relaxed font-light">
                 Escreva para nós! Dúvidas de encomendas, elogios ou apenas um alô afetuoso para a Vovó.
               </p>
@@ -545,6 +617,7 @@
           <span class="text-[10px] uppercase font-normal tracking-widest text-[#ecdcb5] block border-b border-white/5 pb-2">Navegação Expressa</span>
           <ul class="space-y-2 text-xs text-[#eedec6]/70 font-light">
             <li><a href="#unidades" class="hover:text-white transition-colors">Nossos Espaços</a></li>
+            <li><a href="#servicos" class="hover:text-white transition-colors">Serviços</a></li>
             <li><a href="#historia" class="hover:text-white transition-colors">Nossa História</a></li>
             <li><a href="#cardapio" class="hover:text-white transition-colors">Menu de Encomendas</a></li>
           </ul>
@@ -567,83 +640,93 @@
       const SIGNATURE_MENU = [
         {
           id: "p1",
-          name: "Pão de Levain de Fermentação Natural",
-          description: "Crostoso por fora, extremamente macio por dentro. Casca dourada assada no lastro de pedra.",
-          price: "R$ 18,90",
-          priceNum: 18.90,
-          category: "panificacao",
-          tag: "Favorito",
-          imageUrl: "https://res.cloudinary.com/ds53z2vv8/image/upload/v1780353080/copy_of_img_1213_of0ppv.jpg"
+          name: "Torta Holandesa",
+          description: "Sobremesa clássica, cremosa e delicada, preparada para adoçar encontros especiais.",
+          price: "Sob consulta",
+          priceNum: 0,
+          category: "confeitaria",
+          tag: "Sobremesa",
+          imageUrl: "https://res.cloudinary.com/ds53z2vv8/image/upload/v1780341928/IMG_1421_fosooo.jpg"
         },
         {
           id: "p2",
-          name: "Croissant de Manteiga Francesa",
-          description: "Folhado perfeitamente de forma aerada, dourado e amanteigado com sabor leve e requintado.",
-          price: "R$ 11,50",
-          priceNum: 11.50,
+          name: "Pão de Bolinha",
+          description: "Nosso carro-chefe da padaria: montado com 30 bolinhas recheadas uma a uma, massa caseira deliciosa e produção todos os dias.",
+          price: "Sob consulta",
+          priceNum: 0,
           category: "panificacao",
-          tag: "Premium",
-          imageUrl: "https://res.cloudinary.com/ds53z2vv8/image/upload/v1780341927/IMG_1213_of0ppv.jpg"
+          tag: "Carro-chefe",
+          imageUrl: "https://res.cloudinary.com/ds53z2vv8/image/upload/v1780341928/IMG_1335_fochhw.jpg"
         },
         {
           id: "p3",
-          name: "Bolo de Cenoura Calda Craquelada",
-          description: "A receita tradicional da cozinha da Vovó Neusa, com cobertura generosa de calda de cacau belga.",
-          price: "R$ 14,00",
-          priceNum: 14.00,
+          name: "Quindim",
+          description: "Brilho, textura macia e sabor tradicional em uma receita que lembra mesa de família.",
+          price: "Sob consulta",
+          priceNum: 0,
           category: "confeitaria",
-          tag: "Histórico",
-          imageUrl: "https://res.cloudinary.com/ds53z2vv8/image/upload/v1780341927/IMG_1213_of0ppv.jpg"
+          tag: "Clássico",
+          imageUrl: "https://res.cloudinary.com/ds53z2vv8/image/upload/v1780434408/quindim_eibkr6.jpg"
         },
         {
           id: "p4",
-          name: "Pão de Queijo de Canastra Curada",
-          description: "Ingredientes escaldados artesanalmente, queijo meia cura autêntico, irresistível ao morder.",
-          price: "R$ 6,50",
-          priceNum: 6.50,
-          category: "panificacao",
-          tag: "Mais Vendido",
-          imageUrl: "https://res.cloudinary.com/ds53z2vv8/image/upload/v1780341927/IMG_1216_uphbet.jpg"
+          name: "Brownie com Nozes",
+          description: "Brownie intenso, úmido e cheio de nozes, perfeito para acompanhar um café.",
+          price: "Sob consulta",
+          priceNum: 0,
+          category: "confeitaria",
+          tag: "Especial",
+          imageUrl: "https://res.cloudinary.com/ds53z2vv8/image/upload/v1780341926/IMG_1198_pgt0e9.jpg"
         },
         {
           id: "p5",
-          name: "Torta de Frutas Vermelhas Silvestres",
-          description: "Massa crocante leve de doce, creme pâtissière clássico baunilha Bourbon e calda rústica fresca.",
-          price: "R$ 17,00",
-          priceNum: 17.00,
-          category: "confeitaria",
-          tag: null,
-          imageUrl: "https://res.cloudinary.com/ds53z2vv8/image/upload/v1780341927/IMG_1213_of0ppv.jpg"
+          name: "Eventos",
+          description: "Preparamos o espaço e os sabores para receber encontros, aniversários e celebrações com cuidado artesanal.",
+          price: "Sob consulta",
+          priceNum: 0,
+          category: "brunch",
+          tag: "Eventos",
+          imageUrl: "https://res.cloudinary.com/ds53z2vv8/image/upload/v1773768803/WhatsApp_Image_2026-03-17_at_14.29.44_1_zlp8x4.jpg"
         },
         {
           id: "p6",
-          name: "Cappuccino Italiano Clássico",
-          description: "Espresso curto encorpado, leite cremoso no vapor e cacau fino polvilhado sob o copo.",
-          price: "R$ 9,50",
-          priceNum: 9.50,
-          category: "bebidas",
-          tag: null,
-          imageUrl: "https://res.cloudinary.com/ds53z2vv8/image/upload/v1780341928/IMG_1335_fochhw.jpg"
+          name: "Carolinas",
+          description: "Massa leve, recheio delicado e acabamento caprichado para uma doçura de vitrine.",
+          price: "Sob consulta",
+          priceNum: 0,
+          category: "confeitaria",
+          tag: "Doce fino",
+          imageUrl: "https://res.cloudinary.com/ds53z2vv8/image/upload/v1771019902/IMG_2878_ljd2im.jpg"
         },
         {
           id: "p7",
-          name: "Espresso Seleção Especial",
-          description: "Microlote especial colhido em fazendas familiares, notas caramelizadas com baixa acidez.",
-          price: "R$ 6,00",
-          priceNum: 6.00,
-          category: "bebidas",
-          tag: null,
-          imageUrl: "https://res.cloudinary.com/ds53z2vv8/image/upload/v1780341928/IMG_1335_fochhw.jpg"
+          name: "Chocotone",
+          description: "Massa macia, aroma de festa e muito chocolate para encomendas de época.",
+          price: "Sob consulta",
+          priceNum: 0,
+          category: "confeitaria",
+          tag: "Sazonal",
+          imageUrl: "https://res.cloudinary.com/ds53z2vv8/image/upload/v1771019880/IMG_1453_ibc7br.jpg"
         },
         {
           id: "p8",
-          name: "Combinação Brunch Delícias",
-          description: "Seleção fina de brioche, manteiga, ovos cremosos, geléia especial, café filtrado e suco verde.",
-          price: "R$ 44,00",
-          priceNum: 44.00,
-          category: "brunch",
-          tag: "Completo",
-          imageUrl: "https://res.cloudinary.com/ds53z2vv8/image/upload/v1780341926/IMG_1198_pgt0e9.jpg"
+          name: "Lanche na Baguete",
+          description: "Baguete fresquinha e recheio caprichado para um lanche saboroso, prático e bem servido.",
+          price: "Sob consulta",
+          priceNum: 0,
+          category: "panificacao",
+          tag: "Lanche",
+          imageUrl: "https://res.cloudinary.com/ds53z2vv8/image/upload/v1770058831/B0831590-43D0-48B8-80DC-BF637D97AD64_ihgvmr.png"
+        },
+        {
+          id: "p9",
+          name: "Tortas",
+          description: "Tortas preparadas com acabamento delicado e sabores pensados para dividir em bons momentos.",
+          price: "Sob consulta",
+          priceNum: 0,
+          category: "confeitaria",
+          tag: "Sobremesa",
+          imageUrl: "https://res.cloudinary.com/ds53z2vv8/image/upload/v1770056891/A7661BB4-D8A0-4754-9282-66670CFEA24D_y6kqjj.png"
         }
       ];
 
@@ -785,7 +868,7 @@
           cartBar.classList.remove("hidden");
           cartBar.classList.add("flex");
           cartCountIndicator.innerText = count;
-          cartTotalIndicator.innerText = "R$ " + sum.toFixed(2).replace(".", ",");
+          cartTotalIndicator.innerText = sum > 0 ? "R$ " + sum.toFixed(2).replace(".", ",") : "Sob consulta";
         } else {
           cartBar.classList.add("hidden");
           cartBar.classList.remove("flex");
@@ -854,14 +937,14 @@
                   <span class="text-xs w-4 text-center text-primary-950">${cart[id]}</span>
                   <button onclick="changeQty('${item.id}', 1)" class="h-5.5 w-5.5 hover:bg-white rounded-full flex items-center justify-center"><i data-lucide="plus" class="h-2.5 w-2.5 text-primary-800"></i></button>
                 </div>
-                <span class="text-xs text-primary-950 w-16 text-right">R$ ${rowSum.toFixed(2).replace(".", ",")}</span>
+                <span class="text-xs text-primary-950 w-20 text-right">${rowSum > 0 ? "R$ " + rowSum.toFixed(2).replace(".", ",") : "Consultar"}</span>
               </div>
             `;
             orderItemsList.appendChild(itemRow);
           }
         });
 
-        orderSummaryTotal.innerText = "R$ " + sum.toFixed(2).replace(".", ",");
+        orderSummaryTotal.innerText = sum > 0 ? "R$ " + sum.toFixed(2).replace(".", ",") : "Sob consulta";
         lucide.createIcons();
       }
 
@@ -883,7 +966,8 @@
         });
 
         const place = pickupUnit === "matriz" ? "Unidade Matriz" : "Cafeteria Vila Nova";
-        const message = `Olá! Desejo realizar uma encomenda para retirar na *${place}*:\n\n${listMsg}\n*Total Estimado:* R$ ${total.toFixed(2).replace(".", ",")}\n*Retirada:* Cortesia do Estabelecimento\n\nPor favor, confirmem o pedido!`;
+        const totalMsg = total > 0 ? "R$ " + total.toFixed(2).replace(".", ",") : "Sob consulta";
+        const message = `Olá! Desejo realizar uma encomenda para retirar na *${place}*:\n\n${listMsg}\n*Total Estimado:* ${totalMsg}\n*Retirada:* Cortesia do Estabelecimento\n\nPor favor, confirmem o pedido!`;
         
         const tel = pickupUnit === "matriz" ? "551134567890" : "551134567891";
         window.open(`https://wa.me/${tel}?text=${encodeURIComponent(message)}`, "_blank");
