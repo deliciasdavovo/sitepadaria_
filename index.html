@@ -1,0 +1,932 @@
+<!doctype html>
+<html lang="pt-BR" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delícias da Vovó | Padaria & Confeitaria</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                50: '#FAF6F0',
+                100: '#F4ECE1',
+                200: '#E7D9C4',
+                300: '#D5BE9F',
+                400: '#BFA07A',
+                450: '#B0966A',
+                500: '#A37E55',
+                600: '#8C663E',
+                800: '#5C3F21',
+                950: '#2A1C0E',
+              },
+              text: {
+                light: '#6a5e53',
+                dark: '#2d2722',
+              }
+            },
+            fontFamily: {
+              sans: ['"Plus Jakarta Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+              serif: ['"Fraunces"', 'ui-serif', 'Georgia', 'serif'],
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        background-color: #faf7f2;
+        color: #2d2722;
+      }
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #faf7f2;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #e7d9c4;
+        border-radius: 99px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #bfa07a;
+      }
+    </style>
+  </head>
+  <body class="bg-[#faf7f2] selection:bg-primary-200">
+    <!-- Header sticky -->
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-40 transition-all duration-300 bg-[#faf7f2]/95 backdrop-blur-md border-b border-primary-100 py-3.5">
+      <div class="max-w-7xl mx-auto px-6 sm:px-8 flex items-center justify-between">
+        <a href="#inicio" class="flex items-center space-x-3">
+          <div class="h-10 w-10 rounded-full flex items-center justify-center border border-primary-200 text-primary-800 bg-primary-100/70">
+            <i data-lucide="coffee" class="h-5 w-5"></i>
+          </div>
+          <div>
+            <span class="font-serif text-lg sm:text-xl font-medium tracking-tight block text-primary-950">Delícias da Vovó</span>
+            <span class="text-[9px] uppercase tracking-[0.2em] block -mt-1 font-normal text-primary-600">Padaria & Confeitaria</span>
+          </div>
+        </a>
+
+        <!-- Links (Desktop) -->
+        <nav class="hidden md:flex items-center space-x-8">
+          <a href="#inicio" class="text-xs uppercase tracking-widest font-normal text-text-light hover:text-primary-700 transition-colors py-2">Início</a>
+          <a href="#unidades" class="text-xs uppercase tracking-widest font-normal text-text-light hover:text-primary-700 transition-colors py-2">Unidades</a>
+          <a href="#historia" class="text-xs uppercase tracking-widest font-normal text-text-light hover:text-primary-700 transition-colors py-2">Nossa História</a>
+          <a href="#cardapio" class="text-xs uppercase tracking-widest font-normal text-text-light hover:text-primary-700 transition-colors py-2">Destaques</a>
+          <a href="#depoimentos" class="text-xs uppercase tracking-widest font-normal text-text-light hover:text-primary-700 transition-colors py-2">Histórias</a>
+          <a href="#contato" class="text-xs uppercase tracking-widest font-normal text-text-light hover:text-primary-700 transition-colors py-2">Fale Conosco</a>
+        </nav>
+
+        <div class="hidden md:block">
+          <a href="#cardapio" class="text-xs font-normal uppercase tracking-widest px-5 py-2.5 rounded-full border border-primary-900 bg-primary-900 text-white hover:bg-primary-800 transition-all duration-300">
+            Encomendar
+          </a>
+        </div>
+
+        <button id="menu-toggle-btn" class="md:hidden p-2 rounded-lg text-primary-900 hover:bg-primary-100/50 outline-none">
+          <i data-lucide="menu" class="h-6 w-6"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-menu-overlay" class="fixed inset-0 bg-black/50 z-40 hidden opacity-0 transition-opacity duration-300 backdrop-blur-xs"></div>
+    <div id="mobile-menu-drawer" class="fixed top-0 right-0 h-full w-[270px] bg-[#faf7f2] z-50 shadow-2xl p-6 flex flex-col space-y-6 transform translate-x-full transition-transform duration-300 ease-out">
+      <div class="flex justify-between items-center pb-4 border-b border-primary-100">
+        <span class="font-serif text-lg font-medium text-primary-950">Navegação</span>
+        <button id="menu-close-btn" class="p-1 px-2.5 rounded-full hover:bg-primary-100 text-text-light transition-colors">
+          <i data-lucide="x" class="h-5 w-5"></i>
+        </button>
+      </div>
+      <nav class="flex flex-col space-y-3.5">
+        <a href="#inicio" class="mobile-nav-link block py-2.5 px-3 text-sm font-normal text-text-dark hover:bg-primary-100 hover:text-primary-800 transition-all rounded-lg uppercase tracking-wider text-xs">Início</a>
+        <a href="#unidades" class="mobile-nav-link block py-2.5 px-3 text-sm font-normal text-text-dark hover:bg-primary-100 hover:text-primary-800 transition-all rounded-lg uppercase tracking-wider text-xs">Unidades</a>
+        <a href="#historia" class="mobile-nav-link block py-2.5 px-3 text-sm font-normal text-text-dark hover:bg-primary-100 hover:text-primary-800 transition-all rounded-lg uppercase tracking-wider text-xs">Nossa História</a>
+        <a href="#cardapio" class="mobile-nav-link block py-2.5 px-3 text-sm font-normal text-text-dark hover:bg-primary-100 hover:text-primary-800 transition-all rounded-lg uppercase tracking-wider text-xs">Destaques</a>
+        <a href="#depoimentos" class="mobile-nav-link block py-2.5 px-3 text-sm font-normal text-text-dark hover:bg-primary-100 hover:text-primary-800 transition-all rounded-lg uppercase tracking-wider text-xs">Histórias</a>
+        <a href="#contato" class="mobile-nav-link block py-2.5 px-3 text-sm font-normal text-text-dark hover:bg-primary-100 hover:text-primary-800 transition-all rounded-lg uppercase tracking-wider text-xs">Fale Conosco</a>
+      </nav>
+      <div class="pt-4 border-t border-primary-100 flex-1 flex flex-col justify-end">
+        <a href="#cardapio" class="mobile-nav-link block w-full text-center bg-primary-900 text-white py-3 text-xs font-normal uppercase tracking-widest transition-all hover:bg-primary-800 rounded-full">
+          Fazer Encomenda
+        </a>
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative min-h-screen flex items-center justify-center pt-24 pb-20 overflow-hidden bg-[#faf7f2]">
+      <div class="absolute inset-0 z-0">
+        <img 
+          src="https://res.cloudinary.com/ds53z2vv8/image/upload/v1780353080/copy_of_img_1213_of0ppv.jpg" 
+          alt="Pães artesanais na cestaria" 
+          class="w-full h-full object-cover object-center opacity-85 scale-100 transition-transform duration-1000"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-[#faf7f2] via-[#faf7f2]/55 to-[#faf7f2]/20"></div>
+        <div class="absolute inset-0 bg-white/5"></div>
+      </div>
+
+      <div class="relative z-10 max-w-5xl mx-auto px-6 text-center space-y-8">
+        <div class="flex justify-center items-center space-x-3">
+          <div class="h-px w-8 bg-primary-400/40"></div>
+          <span class="font-sans text-[10px] sm:text-xs uppercase tracking-[0.35em] font-normal text-primary-800 block">
+            Fazendo delícias desde 2005
+          </span>
+          <div class="h-px w-8 bg-primary-400/40"></div>
+        </div>
+
+        <h1 class="text-5xl sm:text-7xl lg:text-8xl font-serif font-light text-primary-950 tracking-[0.06em] leading-[1.1] max-w-4xl mx-auto normal-case">
+          Paixão em servir
+        </h1>
+
+        <p class="text-text-light text-sm sm:text-base lg:text-lg max-w-xl mx-auto leading-relaxed font-light">
+          Tradição familiar da <span class="italic font-serif font-medium text-primary-800">Vovó Neusa</span>, receitas que contam histórias inspiradoras e um capricho artesanal único na cidade.
+        </p>
+
+        <div class="pt-4">
+          <a href="#cardapio" class="inline-block border border-primary-900 hover:border-primary-950 px-9 py-4 text-xs font-normal tracking-[0.25em] text-primary-950 uppercase bg-primary-800/10 hover:bg-primary-900 hover:text-white transition-all duration-300 rounded-full shadow-md">
+            Explorar o Cardápio
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Nossas Unidades -->
+    <section id="unidades" class="py-24 max-w-7xl mx-auto px-6 sm:px-8 relative">
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <div class="inline-flex items-center space-x-2 bg-primary-100/80 border border-primary-200 px-3 py-1 rounded-full text-[10px] font-normal tracking-[0.2em] text-primary-700 uppercase">
+          <i data-lucide="map-pin" class="h-3 w-3"></i>
+          <span>Nossos Espaços</span>
+        </div>
+        <h2 class="text-4xl sm:text-5xl font-serif font-medium text-primary-950 tracking-tight">
+          Nossas Unidades
+        </h2>
+        <div class="w-16 h-[1.5px] bg-primary-400 mx-auto"></div>
+        <p class="mt-4 text-text-light text-sm sm:text-base max-w-xl mx-auto leading-relaxed font-light">
+          Cada espaço nosso foi desenhado para acolher suas melhores memórias ao redor da mesa.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16">
+        <!-- Matriz -->
+        <div class="bg-white rounded-[3rem] overflow-hidden border border-primary-200/50 shadow-xs flex flex-col justify-between">
+          <div class="relative h-80 overflow-hidden">
+            <img src="https://res.cloudinary.com/ds53z2vv8/image/upload/v1780341927/IMG_1216_uphbet.jpg" alt="Balcão recheado da nossa Matriz" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#1a130e]/80 via-transparent to-transparent"></div>
+            <div class="absolute bottom-6 left-6 right-6">
+              <span class="text-[9px] uppercase tracking-[0.25em] font-normal text-primary-300 block mb-1">Onde tudo começou</span>
+              <h3 class="font-serif text-2xl font-medium text-white tracking-tight">Unidade Matriz</h3>
+            </div>
+          </div>
+          <div class="p-8 sm:p-10 space-y-6 flex-1 flex flex-col justify-between">
+            <p class="text-xs sm:text-sm text-text-light leading-relaxed font-light">
+              Foi aqui que tudo começou, em 2005. Nossa padaria foi pensada com muito carinho, em cada detalhe — do cheirinho de pão quentinho que recebe quem chega até a vista para o jardim, que transforma uma parada rápida num momento de pausa. De segunda a sexta, servimos o melhor do dia a dia. Aos sábados e feriados, nosso café por quilo reúne a família em volta da mesa.
+            </p>
+            <div class="pt-6 border-t border-primary-100 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="flex items-start space-x-3 text-xs text-text-light">
+                <i data-lucide="clock" class="h-4.5 w-4.5 text-primary-600 shrink-0 mt-0.5"></i>
+                <div>
+                  <span class="text-[9px] font-normal text-text-light uppercase tracking-widest block mb-0.5">Segunda a Sexta</span>
+                  <span class="font-normal text-text-dark block">06h30 às 20h00</span>
+                </div>
+              </div>
+              <div class="flex items-start space-x-3 text-xs text-[#8c663e]">
+                <i data-lucide="coffee" class="h-4.5 w-4.5 text-primary-600 shrink-0 mt-0.5"></i>
+                <div>
+                  <span class="text-[9px] font-normal text-text-light uppercase tracking-widest block mb-0.5">Sábados e Feriados</span>
+                  <span class="font-normal text-text-dark block">07h00 às 19h00 (Café por quilo)</span>
+                </div>
+              </div>
+              <div class="flex items-start space-x-3 text-xs text-text-light sm:col-span-2">
+                <i data-lucide="map-pin" class="h-4.5 w-4.5 text-primary-600 shrink-0 mt-0.5"></i>
+                <div>
+                  <span class="text-[9px] font-normal text-text-light uppercase tracking-widest block mb-0.5">Endereço</span>
+                  <span class="font-normal text-text-dark block">Av. Principal do Afeto, 2005 - Centro. Tel: (11) 3456-7890</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Vila Nova -->
+        <div class="bg-white rounded-[3rem] overflow-hidden border border-primary-200/50 shadow-xs flex flex-col justify-between">
+          <div class="relative h-80 overflow-hidden">
+            <img src="https://res.cloudinary.com/ds53z2vv8/image/upload/v1780341928/IMG_1335_fochhw.jpg" alt="Cafeteria Vila Nova" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#1a130e]/80 via-transparent to-transparent"></div>
+            <div class="absolute bottom-6 left-6 right-6">
+              <span class="text-[9px] uppercase tracking-[0.25em] font-normal text-primary-300 block mb-1">Um refúgio acolhedor</span>
+              <h3 class="font-serif text-2xl font-medium text-white tracking-tight">Cafeteria Vila Nova</h3>
+            </div>
+          </div>
+          <div class="p-8 sm:p-10 space-y-6 flex-1 flex flex-col justify-between">
+            <p class="text-xs sm:text-sm text-text-light leading-relaxed font-light">
+              Um espaço mais intimista, com o mesmo charme e o mesmo cuidado da Matriz. Na Vila Nova, selecionamos a dedo cada item do cardápio pra criar uma experiência pensada nos mínimos detalhes — o lugar perfeito pra um café tranquilo, um encontro com quem se gosta ou simplesmente um tempo só seu. Venha saborear nossos espressos de microlote e tortas finas de frutas.
+            </p>
+            <div class="pt-6 border-t border-primary-100 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="flex items-start space-x-3 text-xs text-text-light">
+                <i data-lucide="clock" class="h-4.5 w-4.5 text-primary-600 shrink-0 mt-0.5"></i>
+                <div>
+                  <span class="text-[9px] font-normal text-text-light uppercase tracking-widest block mb-0.5">Segunda a Sexta</span>
+                  <span class="font-normal text-text-dark block">08h00 às 19h00</span>
+                </div>
+              </div>
+              <div class="flex items-start space-x-3 text-xs text-text-light">
+                <i data-lucide="coffee" class="h-4.5 w-4.5 text-primary-600 shrink-0 mt-0.5"></i>
+                <div>
+                  <span class="text-[9px] font-normal text-text-light uppercase tracking-widest block mb-0.5">Sábados</span>
+                  <span class="font-normal text-text-dark block">08h00 às 17h00 (Dom fechado)</span>
+                </div>
+              </div>
+              <div class="flex items-start space-x-3 text-xs text-text-light sm:col-span-2">
+                <i data-lucide="map-pin" class="h-4.5 w-4.5 text-primary-600 shrink-0 mt-0.5"></i>
+                <div>
+                  <span class="text-[9px] font-normal text-text-light uppercase tracking-widest block mb-0.5">Endereço</span>
+                  <span class="font-normal text-text-dark block">Rua das Amendoeiras, 452 - Vila Nova. Tel: (11) 3456-7891</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Nossa História -->
+    <section id="historia" class="grid grid-cols-1 lg:grid-cols-12 min-h-[580px] overflow-hidden bg-[#faf7f2] border-y border-primary-100">
+      <div class="lg:col-span-6 relative h-96 lg:h-auto min-h-[400px]">
+        <img 
+          src="https://res.cloudinary.com/ds53z2vv8/image/upload/v1780341926/IMG_1198_pgt0e9.jpg" 
+          alt="Ambiente calmo de jardim" 
+          class="w-full h-full object-cover"
+        />
+        <div class="absolute inset-0 bg-[#4c5c68]/15 mix-blend-multiply"></div>
+        <div class="absolute -bottom-5 right-6 bg-[#1f1a15] text-[#ecdcb5] px-5 py-3 rounded-2xl border border-[#9b8054] shadow-xl max-w-[240px]">
+          <p class="font-serif text-sm italic leading-snug font-light">“Com afeto, cada receita carica a dedicação da Vovó.”</p>
+          <div class="mt-2 h-[1px] bg-[#9b8054]/30"></div>
+          <div class="mt-1 flex items-center space-x-1">
+            <i data-lucide="heart" class="h-3 w-3 text-red-400 fill-current"></i>
+            <span class="text-[9px] uppercase tracking-wider font-normal">Dona Neusa</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-6 bg-[#4c5c68] py-20 px-8 sm:px-16 flex flex-col justify-center space-y-8 relative text-white">
+        <div class="space-y-3">
+          <div class="inline-flex items-center space-x-2 bg-white/10 border border-white/20 px-3 py-1 rounded-full text-[10px] font-normal tracking-[0.2em] uppercase text-[#ecdcb5]">
+            <i data-lucide="sparkles" class="h-3 w-3"></i>
+            <span>Legado & Lembrança</span>
+          </div>
+          <h2 class="text-4xl sm:text-5xl font-serif font-light text-white tracking-wide leading-tight uppercase">
+            Nossa História
+          </h2>
+          <div class="w-16 h-[1.5px] bg-[#ecdcb5]"></div>
+        </div>
+
+        <div class="space-y-5 text-[#fbf9f5]/90 text-sm sm:text-base leading-relaxed font-sans font-light">
+          <p>
+            Tudo começou com a vontade de partilhar as delícias de uma vovó de mão cheia. Na cozinha da <span class="italic font-serif font-normal text-[#ecdcb5]">Dona Neusa</span>, cada receita carregava mais do que ingredientes: carregava afeto, memória e o desejo de fazer o outro feliz com comida de verdade.
+          </p>
+          <p>
+            O que era feito pra família virou um pedacinho de casa pra cidade inteira. Mais de 20 anos depois, seguimos com a mesma essência — o sabor caseiro, o capricho artesanal e a paixão em servir que dá nome a tudo o que fazemos.
+          </p>
+          <p class="font-serif text-lg text-[#ecdcb5] font-normal italic pt-2">
+            Bem-vindo à Delícias da Vovó. Aqui, você é da família.
+          </p>
+        </div>
+
+        <div class="pt-6 border-t border-white/10 flex items-center justify-between">
+          <div>
+            <span class="text-[10px] uppercase tracking-widest font-normal text-[#ecdcb5]/85 block mb-1">Cozinha Afetuosa</span>
+            <span class="font-serif text-xl font-light text-white italic block">Com afeto, Vovó Neusa & Família</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Menu Destaques / Cardápio -->
+    <section id="cardapio" class="py-24 max-w-7xl mx-auto px-6 sm:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <div class="inline-flex items-center space-x-2 bg-primary-100/80 border border-primary-200 px-3 py-1 rounded-full text-[10px] font-normal tracking-[0.2em] text-primary-700 uppercase">
+          <i data-lucide="chef-hat" class="h-3 w-3"></i>
+          <span>Seleção Especial</span>
+        </div>
+        <h2 class="text-4xl sm:text-5xl font-serif font-medium text-primary-950 tracking-wide uppercase">
+          Menu Destaques
+        </h2>
+        <div class="w-16 h-[1.5px] bg-primary-400 mx-auto"></div>
+        <p class="mt-4 text-text-light text-sm sm:text-base max-w-xl mx-auto leading-relaxed font-light">
+          Encomende previamente as delícias fresquinhas feitas sob medida com o amor de vó para sua casa.
+        </p>
+      </div>
+
+      <!-- Categories Filter Tabs -->
+      <div class="flex flex-wrap items-center justify-center gap-2 mb-12">
+        <button data-category-tab="all" class="px-5 py-2.5 rounded-full text-[10px] sm:text-xs font-normal tracking-widest uppercase transition-all duration-300 pointer-events-auto border outline-none bg-primary-950 border-primary-950 text-white shadow-xs">
+          Todas
+        </button>
+        <button data-category-tab="panificacao" class="px-5 py-2.5 rounded-full text-[10px] sm:text-xs font-normal tracking-widest uppercase transition-all duration-300 pointer-events-auto border outline-none bg-white border-primary-200/60 text-[#6a5e53] hover:bg-primary-100/30">
+          Panificação
+        </button>
+        <button data-category-tab="confeitaria" class="px-5 py-2.5 rounded-full text-[10px] sm:text-xs font-normal tracking-widest uppercase transition-all duration-300 pointer-events-auto border outline-none bg-white border-primary-200/60 text-[#6a5e53] hover:bg-primary-100/30">
+          Confeitaria
+        </button>
+        <button data-category-tab="bebidas" class="px-5 py-2.5 rounded-full text-[10px] sm:text-xs font-normal tracking-widest uppercase transition-all duration-300 pointer-events-auto border outline-none bg-white border-primary-200/60 text-[#6a5e53] hover:bg-primary-100/30">
+          Bebidas
+        </button>
+        <button data-category-tab="brunch" class="px-5 py-2.5 rounded-full text-[10px] sm:text-xs font-normal tracking-widest uppercase transition-all duration-300 pointer-events-auto border outline-none bg-white border-primary-200/60 text-[#6a5e53] hover:bg-primary-100/30">
+          Café e Brunch
+        </button>
+      </div>
+
+      <!-- Products Grid -->
+      <div id="products-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Dynamically injected via script -->
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="depoimentos" class="py-24 bg-white border-y border-primary-100">
+      <div class="max-w-7xl mx-auto px-6 sm:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 sm:gap-16 items-start">
+          <!-- Left Column -->
+          <div class="lg:col-span-6 space-y-8">
+            <div class="space-y-3">
+              <span class="text-[9px] uppercase font-normal tracking-[0.2em] text-primary-600 block">Opinião de quem nos visita</span>
+              <h3 class="font-serif text-3xl font-medium text-primary-950">Histórias Acolhedoras</h3>
+              <div class="w-12 h-[1px] bg-primary-400"></div>
+            </div>
+
+            <div class="space-y-6">
+              <!-- Testimonial 1 -->
+              <div class="bg-primary-50/50 p-6 rounded-2xl border border-primary-200/40 space-y-4">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <span class="text-sm font-medium text-primary-950 block">Lucas Mendes</span>
+                    <span class="text-[10px] text-text-light block">Há 1 semana na Matriz</span>
+                  </div>
+                  <div class="flex text-primary-500 text-xs">
+                    <i data-lucide="star" class="h-3.5 w-3.5 fill-current"></i>
+                    <i data-lucide="star" class="h-3.5 w-3.5 fill-current"></i>
+                    <i data-lucide="star" class="h-3.5 w-3.5 fill-current"></i>
+                    <i data-lucide="star" class="h-3.5 w-3.5 fill-current"></i>
+                    <i data-lucide="star" class="h-3.5 w-3.5 fill-current"></i>
+                  </div>
+                </div>
+                <p class="text-xs sm:text-sm text-text-light leading-relaxed font-light italic">
+                  "O pão de fermentação natural é simplesmente incrível. Lembra os cafés da manhã na casa da minha vó no interior. Crocante por fora e muito macio por dentro."
+                </p>
+              </div>
+
+              <!-- Testimonial 2 -->
+              <div class="bg-primary-50/50 p-6 rounded-2xl border border-primary-200/40 space-y-4">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <span class="text-sm font-medium text-primary-950 block">Mariana Rocha</span>
+                    <span class="text-[10px] text-text-light block">Há 3 dias na Vila Nova</span>
+                  </div>
+                  <div class="flex text-primary-500 text-xs">
+                    <i data-lucide="star" class="h-3.5 w-3.5 fill-current"></i>
+                    <i data-lucide="star" class="h-3.5 w-3.5 fill-current"></i>
+                    <i data-lucide="star" class="h-3.5 w-3.5 fill-current"></i>
+                    <i data-lucide="star" class="h-3.5 w-3.5 fill-current"></i>
+                    <i data-lucide="star" class="h-3.5 w-3.5 fill-current"></i>
+                  </div>
+                </div>
+                <p class="text-xs sm:text-sm text-text-light leading-relaxed font-light italic">
+                  "Melhor cappuccino que já tomei na vida. E as atendentes são um amor de pessoa. Tratamento muito receptivo."
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column (Contact & Feedback Form) -->
+          <div id="contato" class="lg:col-span-6 bg-[#faf7f2] p-8 sm:p-10 rounded-[2.5rem] border border-primary-200/50 space-y-8">
+            <div class="space-y-1">
+              <h4 class="font-serif text-2xl font-medium text-primary-950">Deixe uma mensagem</h4>
+              <p class="text-xs text-text-light leading-relaxed font-light">
+                Escreva para nós! Dúvidas de encomendas, elogios ou apenas um alô afetuoso para a Vovó.
+              </p>
+            </div>
+
+            <form onsubmit="handleSendFeedback(event)" class="space-y-4">
+              <div>
+                <label class="block text-[10px] font-normal uppercase tracking-widest text-text-light mb-1.5">Seu Nome</label>
+                <input id="feedback-name" type="text" required class="w-full bg-white border border-primary-200 rounded-full px-5 py-3 text-xs outline-none focus:border-primary-450 transition-all font-sans font-light" placeholder="Como deseja ser chamado?" />
+              </div>
+              <div>
+                <label class="block text-[10px] font-normal uppercase tracking-widest text-text-light mb-1.5">Sua Mensagem</label>
+                <textarea id="feedback-msg" required rows="4" class="w-full bg-white border border-primary-200 rounded-[1.5rem] p-5 text-xs outline-none focus:border-primary-450 transition-all font-sans font-light resize-none" placeholder="O que gostaria de dizer à nossa equipe?"></textarea>
+              </div>
+              <button type="submit" class="w-full bg-primary-950 hover:bg-primary-900 text-white py-3.5 rounded-full font-normal text-xs uppercase tracking-[0.2em] transition-colors flex items-center justify-center space-x-2 outline-none">
+                <i data-lucide="send" class="h-3.5 w-3.5"></i>
+                <span>Enviar Mensagem</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sticky Floating Cart Indicator bar -->
+    <div id="cart-floating-bar" class="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-40 w-[92%] sm:w-auto sm:min-w-[420px] bg-primary-950 text-white rounded-full px-6 py-4 hidden items-center justify-between shadow-xl cursor-pointer hover:bg-primary-900 transition-all duration-300" onclick="openOrderDrawer()">
+      <div class="flex items-center space-x-4">
+        <div class="relative">
+          <i data-lucide="shopping-bag" class="h-6 w-6 text-primary-200"></i>
+          <span id="cart-count-indicator" class="absolute -top-2 -right-2 bg-red-500 text-white font-normal text-[10px] h-5 w-5 rounded-full flex items-center justify-center border-2 border-primary-950">
+            0
+          </span>
+        </div>
+        <div>
+          <span class="text-[9px] uppercase opacity-75 block tracking-widest leading-none font-normal">Sua Encomenda</span>
+          <span id="cart-total-indicator" class="font-normal text-xs text-[#ecdcb5]">R$ 0,00</span>
+        </div>
+      </div>
+      <div class="flex items-center space-x-2 text-primary-200 text-xs font-normal tracking-wider uppercase text-[10px]">
+        <span>Ver Pedido</span>
+        <i data-lucide="arrow-right" class="h-4 w-4"></i>
+      </div>
+    </div>
+
+    <!-- Order Review Side Drawer -->
+    <div id="order-drawer-overlay" class="fixed inset-0 bg-black/60 z-50 hidden opacity-0 transition-opacity duration-300 backdrop-blur-xs" onclick="closeOrderDrawer()"></div>
+    <div id="order-drawer" class="fixed top-0 right-0 h-full w-full sm:w-[500px] bg-[#faf7f2] z-50 shadow-2xl flex flex-col justify-between transform translate-x-full transition-transform duration-300 ease-out">
+      <div class="p-6 border-b border-primary-100 flex items-center justify-between bg-white">
+        <div class="flex items-center space-x-2.5">
+          <i data-lucide="shopping-bag" class="h-5 w-5 text-primary-900"></i>
+          <h3 class="font-serif text-lg font-medium text-primary-950 uppercase tracking-wide">Seu Pedido</h3>
+        </div>
+        <button onclick="closeOrderDrawer()" class="p-1 px-3 rounded-full hover:bg-primary-50 text-xs uppercase tracking-widest text-[#6a5e53]">
+          Fechar
+        </button>
+      </div>
+
+      <div id="order-items-list" class="flex-1 overflow-y-auto p-6 space-y-4">
+        <!-- Injected dynamically -->
+      </div>
+
+      <div class="p-6 border-t border-primary-100 bg-white space-y-5">
+        <div>
+          <label class="block text-[10px] font-normal uppercase tracking-widest text-text-light mb-2">Unidade para Retirada</label>
+          <div class="grid grid-cols-2 gap-2">
+            <button data-unit-select="matriz" onclick="setPickupUnit('matriz')" class="text-[10px] font-normal uppercase tracking-widest p-3 border rounded-full transition-all duration-300 bg-primary-950 border-primary-950 text-white animate-fade">
+              Unidade Matriz
+            </button>
+            <button data-unit-select="vilanova" onclick="setPickupUnit('vilanova')" class="text-[10px] font-normal uppercase tracking-widest p-3 border border-primary-200 text-text-light hover:bg-[#FAF6F0] rounded-full transition-all duration-300">
+              Vila Nova
+            </button>
+          </div>
+        </div>
+
+        <div class="space-y-2 pt-2">
+          <div class="flex justify-between text-[11px] text-text-light">
+            <span>Taxa de Embalagem & Retirada</span>
+            <span class="text-emerald-700 font-normal uppercase tracking-wider text-[10px]">Cortesia</span>
+          </div>
+          <div class="h-[1px] bg-primary-100 my-2"></div>
+          <div class="flex justify-between font-serif text-base font-medium text-primary-950 uppercase tracking-wide">
+            <span>Total Estimado</span>
+            <span id="order-summary-total">R$ 0,00</span>
+          </div>
+        </div>
+
+        <button onclick="handleWhatsappOrder()" class="w-full bg-[#1b5e20] hover:bg-[#124116] text-white py-4 rounded-full font-normal text-xs tracking-widest uppercase flex items-center justify-center space-x-2 shadow-md transition-all duration-300">
+          <i data-lucide="message-circle" class="h-4.5 w-4.5"></i>
+          <span>Concluir via WhatsApp</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-primary-950 text-[#eedec6]/90 py-20 border-t border-white/5 font-sans">
+      <div class="max-w-7xl mx-auto px-6 sm:px-8 grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-white/5 pb-16">
+        <div class="space-y-4">
+          <div class="flex items-center space-x-2">
+            <i data-lucide="coffee" class="h-5 w-5 text-[#ecdcb5]"></i>
+            <span class="font-serif text-lg font-medium text-white tracking-wide">Delícias da Vovó</span>
+          </div>
+          <p class="text-xs text-[#eedec6]/60 leading-relaxed font-light">
+            Cozinhando afeto e partilhando deliciosas histórias com sabor caseiro e capricho artesanal desde 2005.
+          </p>
+        </div>
+
+        <div class="space-y-3">
+          <span class="text-[10px] uppercase font-normal tracking-widest text-[#ecdcb5] block border-b border-white/5 pb-2">Unidade Matriz</span>
+          <ul class="space-y-2 text-xs text-[#eedec6]/75 leading-relaxed font-light">
+            <li class="flex items-start space-x-2">
+              <i data-lucide="map-pin" class="h-4 w-4 shrink-0 text-primary-450"></i>
+              <span>Av. Principal do Afeto, 2005 - Centro</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <i data-lucide="phone" class="h-4 w-4 shrink-0 text-primary-450"></i>
+              <span>(11) 3456-7890</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="space-y-3">
+          <span class="text-[10px] uppercase font-normal tracking-widest text-[#ecdcb5] block border-b border-white/5 pb-2">Cafeteria Vila Nova</span>
+          <ul class="space-y-2 text-xs text-[#eedec6]/75 leading-relaxed font-light">
+            <li class="flex items-start space-x-2">
+              <i data-lucide="map-pin" class="h-4 w-4 shrink-0 text-primary-450"></i>
+              <span>Rua das Amendoeiras, 452 - Vila Nova</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <i data-lucide="phone" class="h-4 w-4 shrink-0 text-primary-450"></i>
+              <span>(11) 3456-7891</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="space-y-3">
+          <span class="text-[10px] uppercase font-normal tracking-widest text-[#ecdcb5] block border-b border-white/5 pb-2">Navegação Expressa</span>
+          <ul class="space-y-2 text-xs text-[#eedec6]/70 font-light">
+            <li><a href="#unidades" class="hover:text-white transition-colors">Nossos Espaços</a></li>
+            <li><a href="#historia" class="hover:text-white transition-colors">Nossa História</a></li>
+            <li><a href="#cardapio" class="hover:text-white transition-colors">Menu de Encomendas</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-6 sm:px-8 pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-[#eedec6]/50 font-light leading-relaxed">
+        <p>© 2026 Padaria Delícias da Vovó Ltda. CNPJ 12.345.678/0001-90.</p>
+        <p class="mt-2 sm:mt-0 uppercase tracking-[0.1em] text-[#eedec6]/40 text-right">Feito com carinho e dedicação artesanal.</p>
+      </div>
+    </footer>
+
+    <!-- Lucide & Scripts -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      // Initialize Lucide Icons
+      lucide.createIcons();
+
+      // Menu Content
+      const SIGNATURE_MENU = [
+        {
+          id: "p1",
+          name: "Pão de Levain de Fermentação Natural",
+          description: "Crostoso por fora, extremamente macio por dentro. Casca dourada assada no lastro de pedra.",
+          price: "R$ 18,90",
+          priceNum: 18.90,
+          category: "panificacao",
+          tag: "Favorito",
+          imageUrl: "https://res.cloudinary.com/ds53z2vv8/image/upload/v1780353080/copy_of_img_1213_of0ppv.jpg"
+        },
+        {
+          id: "p2",
+          name: "Croissant de Manteiga Francesa",
+          description: "Folhado perfeitamente de forma aerada, dourado e amanteigado com sabor leve e requintado.",
+          price: "R$ 11,50",
+          priceNum: 11.50,
+          category: "panificacao",
+          tag: "Premium",
+          imageUrl: "https://res.cloudinary.com/ds53z2vv8/image/upload/v1780341927/IMG_1213_of0ppv.jpg"
+        },
+        {
+          id: "p3",
+          name: "Bolo de Cenoura Calda Craquelada",
+          description: "A receita tradicional da cozinha da Vovó Neusa, com cobertura generosa de calda de cacau belga.",
+          price: "R$ 14,00",
+          priceNum: 14.00,
+          category: "confeitaria",
+          tag: "Histórico",
+          imageUrl: "https://res.cloudinary.com/ds53z2vv8/image/upload/v1780341927/IMG_1213_of0ppv.jpg"
+        },
+        {
+          id: "p4",
+          name: "Pão de Queijo de Canastra Curada",
+          description: "Ingredientes escaldados artesanalmente, queijo meia cura autêntico, irresistível ao morder.",
+          price: "R$ 6,50",
+          priceNum: 6.50,
+          category: "panificacao",
+          tag: "Mais Vendido",
+          imageUrl: "https://res.cloudinary.com/ds53z2vv8/image/upload/v1780341927/IMG_1216_uphbet.jpg"
+        },
+        {
+          id: "p5",
+          name: "Torta de Frutas Vermelhas Silvestres",
+          description: "Massa crocante leve de doce, creme pâtissière clássico baunilha Bourbon e calda rústica fresca.",
+          price: "R$ 17,00",
+          priceNum: 17.00,
+          category: "confeitaria",
+          tag: null,
+          imageUrl: "https://res.cloudinary.com/ds53z2vv8/image/upload/v1780341927/IMG_1213_of0ppv.jpg"
+        },
+        {
+          id: "p6",
+          name: "Cappuccino Italiano Clássico",
+          description: "Espresso curto encorpado, leite cremoso no vapor e cacau fino polvilhado sob o copo.",
+          price: "R$ 9,50",
+          priceNum: 9.50,
+          category: "bebidas",
+          tag: null,
+          imageUrl: "https://res.cloudinary.com/ds53z2vv8/image/upload/v1780341928/IMG_1335_fochhw.jpg"
+        },
+        {
+          id: "p7",
+          name: "Espresso Seleção Especial",
+          description: "Microlote especial colhido em fazendas familiares, notas caramelizadas com baixa acidez.",
+          price: "R$ 6,00",
+          priceNum: 6.00,
+          category: "bebidas",
+          tag: null,
+          imageUrl: "https://res.cloudinary.com/ds53z2vv8/image/upload/v1780341928/IMG_1335_fochhw.jpg"
+        },
+        {
+          id: "p8",
+          name: "Combinação Brunch Delícias",
+          description: "Seleção fina de brioche, manteiga, ovos cremosos, geléia especial, café filtrado e suco verde.",
+          price: "R$ 44,00",
+          priceNum: 44.00,
+          category: "brunch",
+          tag: "Completo",
+          imageUrl: "https://res.cloudinary.com/ds53z2vv8/image/upload/v1780341926/IMG_1198_pgt0e9.jpg"
+        }
+      ];
+
+      // State Management
+      let cart = {};
+      let selectedCategory = "all";
+      let pickupUnit = "matriz";
+
+      // Selectors
+      const productsGrid = document.getElementById("products-grid");
+      const cartBar = document.getElementById("cart-floating-bar");
+      const cartCountIndicator = document.getElementById("cart-count-indicator");
+      const cartTotalIndicator = document.getElementById("cart-total-indicator");
+      const orderDrawerOverlay = document.getElementById("order-drawer-overlay");
+      const orderDrawer = document.getElementById("order-drawer");
+      const orderItemsList = document.getElementById("order-items-list");
+      const orderSummaryTotal = document.getElementById("order-summary-total");
+
+      const mobileOverlay = document.getElementById("mobile-menu-overlay");
+      const mobileDrawer = document.getElementById("mobile-menu-drawer");
+
+      // Startup
+      window.addEventListener("DOMContentLoaded", () => {
+        renderMenu();
+        updateCartUI();
+      });
+
+      // Tab Filtering
+      document.querySelectorAll("[data-category-tab]").forEach(tab => {
+        tab.addEventListener("click", () => {
+          document.querySelectorAll("[data-category-tab]").forEach(btn => {
+            btn.classList.add("bg-white", "border-primary-200/60", "text-[#6a5e53]", "hover:bg-primary-100/30");
+            btn.classList.remove("bg-primary-950", "border-primary-950", "text-white");
+          });
+          tab.classList.remove("bg-white", "border-primary-200/60", "text-[#6a5e53]");
+          tab.classList.add("bg-primary-950", "border-primary-950", "text-white");
+          selectedCategory = tab.getAttribute("data-category-tab");
+          renderMenu();
+        });
+      });
+
+      // Mobile Menu
+      document.getElementById("menu-toggle-btn").addEventListener("click", () => {
+        mobileOverlay.classList.remove("hidden");
+        setTimeout(() => mobileOverlay.classList.add("opacity-100"), 15);
+        mobileDrawer.classList.remove("translate-x-full");
+      });
+
+      const closeMenu = () => {
+        mobileOverlay.classList.remove("opacity-100");
+        mobileDrawer.classList.add("translate-x-full");
+        setTimeout(() => mobileOverlay.classList.add("hidden"), 300);
+      };
+
+      document.getElementById("menu-close-btn").addEventListener("click", closeMenu);
+      mobileOverlay.addEventListener("click", closeMenu);
+      document.querySelectorAll(".mobile-nav-link").forEach(link => {
+        link.addEventListener("click", closeMenu);
+      });
+
+      // Menu Maker
+      function renderMenu() {
+        productsGrid.innerHTML = "";
+        const visibleItems = selectedCategory === "all" 
+          ? SIGNATURE_MENU 
+          : SIGNATURE_MENU.filter(x => x.category === selectedCategory);
+
+        visibleItems.forEach(item => {
+          const qty = cart[item.id] || 0;
+          const card = document.createElement("div");
+          card.className = "bg-white rounded-[2.2rem] overflow-hidden border border-primary-200/60 hover:shadow-lg transition-all duration-300 flex flex-col justify-between group h-full";
+          
+          card.innerHTML = `
+            <div class="relative h-56 overflow-hidden">
+              <img src="${item.imageUrl}" alt="${item.name}" class="w-full h-full object-cover filter brightness-95 group-hover:scale-102 transition-transform duration-500" />
+              ${item.tag ? `
+                <span class="absolute top-4 left-4 bg-primary-100 text-primary-800 border border-primary-200/40 text-[9px] uppercase tracking-widest px-2.5 py-0.5 rounded-full z-10">${item.tag}</span>
+              ` : ""}
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between space-y-5">
+              <div class="space-y-2">
+                <h4 class="font-serif text-base font-medium text-primary-950 leading-snug">${item.name}</h4>
+                <p class="text-text-light text-[11px] leading-relaxed font-light">${item.description}</p>
+              </div>
+              <div class="flex items-center justify-between pt-2">
+                <div>
+                  <span class="text-[8px] text-text-light uppercase tracking-wider block">Preço</span>
+                  <span class="text-sm text-primary-950 font-normal">${item.price}</span>
+                </div>
+                <div>
+                  ${qty > 0 ? `
+                    <div class="flex items-center space-x-1.5 bg-primary-100/80 border border-primary-200 rounded-full p-0.5">
+                      <button onclick="changeQty('${item.id}', -1)" class="h-6 w-6 hover:bg-white rounded-full flex items-center justify-center transition-all"><i data-lucide="minus" class="h-3 w-3"></i></button>
+                      <span class="text-xs font-normal w-5 text-center text-primary-950">${qty}</span>
+                      <button onclick="changeQty('${item.id}', 1)" class="h-6 w-6 hover:bg-white rounded-full flex items-center justify-center transition-all"><i data-lucide="plus" class="h-3 w-3"></i></button>
+                    </div>
+                  ` : `
+                    <button onclick="changeQty('${item.id}', 1)" class="bg-primary-50 text-text-light border border-primary-200 text-[9px] uppercase tracking-wider px-3.5 py-2 rounded-full hover:bg-primary-950 hover:text-white transition-all flex items-center gap-1.5">
+                      <i data-lucide="plus" class="h-3.5 w-3.5"></i>
+                      <span>Adicionar</span>
+                    </button>
+                  `}
+                </div>
+              </div>
+            </div>
+          `;
+          productsGrid.appendChild(card);
+        });
+        lucide.createIcons();
+      }
+
+      // Change Qty helper
+      window.changeQty = function(id, val) {
+        const next = (cart[id] || 0) + val;
+        if (next <= 0) {
+          delete cart[id];
+        } else {
+          cart[id] = next;
+        }
+        renderMenu();
+        updateCartUI();
+        if (!orderDrawer.classList.contains("translate-x-full")) {
+          renderDrawerItems();
+        }
+      };
+
+      function updateCartUI() {
+        let count = 0;
+        let sum = 0;
+        Object.keys(cart).forEach(id => {
+          const item = SIGNATURE_MENU.find(x => x.id === id);
+          if (item) {
+            count += cart[id];
+            sum += item.priceNum * cart[id];
+          }
+        });
+
+        if (count > 0) {
+          cartBar.classList.remove("hidden");
+          cartBar.classList.add("flex");
+          cartCountIndicator.innerText = count;
+          cartTotalIndicator.innerText = "R$ " + sum.toFixed(2).replace(".", ",");
+        } else {
+          cartBar.classList.add("hidden");
+          cartBar.classList.remove("flex");
+        }
+      }
+
+      // Drawer handlers
+      window.openOrderDrawer = function() {
+        orderDrawerOverlay.classList.remove("hidden");
+        setTimeout(() => orderDrawerOverlay.classList.add("opacity-100"), 10);
+        orderDrawer.classList.remove("translate-x-full");
+        renderDrawerItems();
+      };
+
+      window.closeOrderDrawer = function() {
+        orderDrawerOverlay.classList.remove("opacity-100");
+        orderDrawer.classList.add("translate-x-full");
+        setTimeout(() => orderDrawerOverlay.classList.add("hidden"), 300);
+      };
+
+      window.setPickupUnit = function(unit) {
+        pickupUnit = unit;
+        document.querySelectorAll("[data-unit-select]").forEach(btn => {
+          btn.classList.add("border-primary-200", "text-text-light", "hover:bg-[#FAF6F0]");
+          btn.classList.remove("bg-primary-950", "border-primary-950", "text-white");
+        });
+        const currentBtn = document.querySelector(`[data-unit-select="${unit}"]`);
+        if (currentBtn) {
+          currentBtn.classList.remove("border-primary-200", "text-text-light", "hover:bg-[#FAF6F0]");
+          currentBtn.classList.add("bg-primary-950", "border-primary-950", "text-white");
+        }
+      };
+
+      function renderDrawerItems() {
+        orderItemsList.innerHTML = "";
+        const keys = Object.keys(cart);
+        let sum = 0;
+
+        if (keys.length === 0) {
+          orderItemsList.innerHTML = `
+            <div class="text-center py-16 text-text-light flex flex-col items-center justify-center space-y-3">
+              <i data-lucide="shopping-bag" class="h-8 w-8 text-primary-300"></i>
+              <p class="text-xs font-light">Seu carrinho de encomendas está vazio.</p>
+            </div>
+          `;
+          orderSummaryTotal.innerText = "R$ 0,00";
+          lucide.createIcons();
+          return;
+        }
+
+        keys.forEach(id => {
+          const item = SIGNATURE_MENU.find(x => x.id === id);
+          if (item) {
+            const rowSum = item.priceNum * cart[id];
+            sum += rowSum;
+            const itemRow = document.createElement("div");
+            itemRow.className = "flex justify-between items-center bg-white p-4 rounded-xl border border-primary-100";
+            itemRow.innerHTML = `
+              <div class="flex-1 pr-3">
+                <h5 class="text-xs font-medium text-primary-900 leading-tight">${item.name}</h5>
+                <span class="text-[10px] text-text-light">Unidade: ${item.price}</span>
+              </div>
+              <div class="flex items-center space-x-3.5">
+                <div class="flex items-center bg-primary-50 rounded-full border border-primary-200 p-0.5">
+                  <button onclick="changeQty('${item.id}', -1)" class="h-5.5 w-5.5 hover:bg-white rounded-full flex items-center justify-center"><i data-lucide="minus" class="h-2.5 w-2.5 text-primary-800"></i></button>
+                  <span class="text-xs w-4 text-center text-primary-950">${cart[id]}</span>
+                  <button onclick="changeQty('${item.id}', 1)" class="h-5.5 w-5.5 hover:bg-white rounded-full flex items-center justify-center"><i data-lucide="plus" class="h-2.5 w-2.5 text-primary-800"></i></button>
+                </div>
+                <span class="text-xs text-primary-950 w-16 text-right">R$ ${rowSum.toFixed(2).replace(".", ",")}</span>
+              </div>
+            `;
+            orderItemsList.appendChild(itemRow);
+          }
+        });
+
+        orderSummaryTotal.innerText = "R$ " + sum.toFixed(2).replace(".", ",");
+        lucide.createIcons();
+      }
+
+      // Checkout via Whats
+      window.handleWhatsappOrder = function() {
+        const keys = Object.keys(cart);
+        if (keys.length === 0) return;
+
+        let total = 0;
+        let listMsg = "";
+        keys.forEach(id => {
+          const item = SIGNATURE_MENU.find(x => x.id === id);
+          if (item) {
+            const qty = cart[id];
+            const sum = item.priceNum * qty;
+            total += sum;
+            listMsg += `• ${qty}x ${item.name} (${item.price})\n`;
+          }
+        });
+
+        const place = pickupUnit === "matriz" ? "Unidade Matriz" : "Cafeteria Vila Nova";
+        const message = `Olá! Desejo realizar uma encomenda para retirar na *${place}*:\n\n${listMsg}\n*Total Estimado:* R$ ${total.toFixed(2).replace(".", ",")}\n*Retirada:* Cortesia do Estabelecimento\n\nPor favor, confirmem o pedido!`;
+        
+        const tel = pickupUnit === "matriz" ? "551134567890" : "551134567891";
+        window.open(`https://wa.me/${tel}?text=${encodeURIComponent(message)}`, "_blank");
+      };
+
+      // Toast Feedback Msg
+      window.handleSendFeedback = function(e) {
+        e.preventDefault();
+        const name = document.getElementById("feedback-name").value.trim();
+        const msg = document.getElementById("feedback-msg").value.trim();
+        if (!name || !msg) return;
+
+        // Toast feedback info
+        let toast = document.createElement("div");
+        toast.className = "fixed bottom-24 left-1/2 transform -translate-x-1/2 bg-emerald-50 border border-emerald-200 text-emerald-800 p-4 rounded-full text-xs font-light shadow-lg flex items-center gap-2 z-50 transition-all duration-300 opacity-0 translate-y-3";
+        toast.innerHTML = `<i data-lucide="heart" class="h-4 w-4 fill-current text-red-400"></i> Mensagem enviada com carinho, obrigado ${name}!`;
+        document.body.appendChild(toast);
+        lucide.createIcons();
+
+        setTimeout(() => {
+          toast.classList.remove("opacity-0", "translate-y-3");
+        }, 15);
+
+        setTimeout(() => {
+          toast.classList.add("opacity-0", "translate-y-3");
+          setTimeout(() => toast.remove(), 400);
+        }, 4000);
+
+        document.getElementById("feedback-name").value = "";
+        document.getElementById("feedback-msg").value = "";
+      };
+
+      // Simple sticky header background styling on scroll
+      window.addEventListener("scroll", () => {
+        const header = document.getElementById("main-header");
+        if (window.scrollY > 50) {
+          header.classList.add("shadow-md", "py-2.5");
+          header.classList.remove("py-3.5");
+        } else {
+          header.classList.remove("shadow-md", "py-2.5");
+          header.classList.add("py-3.5");
+        }
+      });
+    </script>
+  </body>
+</html>
