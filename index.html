@@ -1,1016 +1,1422 @@
-<!doctype html>
-<html lang="pt-BR" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Delícias da Vovó | Padaria & Confeitaria</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200..700;1,9..144,200..700&family=Libre+Baskerville:ital,wght@0,400;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              primary: {
-                50: '#FAF6F0',
-                100: '#F4ECE1',
-                200: '#E7D9C4',
-                300: '#D5BE9F',
-                400: '#BFA07A',
-                450: '#B0966A',
-                500: '#A37E55',
-                600: '#8C663E',
-                800: '#5C3F21',
-                950: '#2A1C0E',
-              },
-              text: {
-                light: '#6a5e53',
-                dark: '#2d2722',
-              }
-            },
-            fontFamily: {
-              sans: ['"Plus Jakarta Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-              serif: ['"Libre Baskerville"', 'ui-serif', 'Georgia', 'serif'],
-              display: ['"Fraunces"', 'ui-serif', 'Georgia', 'serif'],
-            }
-          }
-        }
-      }
-    </script>
-    <style>
-      body {
-        font-family: "Plus Jakarta Sans", sans-serif;
-        background-color: #faf7f2;
-        color: #2d2722;
-      }
-      b,
-      strong,
-      .font-medium,
-      .font-semibold,
-      .font-bold,
-      .font-extrabold,
-      .font-black {
-        font-weight: 400 !important;
-      }
-      ::-webkit-scrollbar {
-        width: 8px;
-      }
-      ::-webkit-scrollbar-track {
-        background: #faf7f2;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #e7d9c4;
-        border-radius: 99px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: #bfa07a;
-      }
-    </style>
-  </head>
-  <body class="bg-[#faf7f2] selection:bg-primary-200">
-    <!-- Header sticky -->
-    <header id="main-header" class="fixed top-0 left-0 right-0 z-40 transition-all duration-300 bg-[#faf7f2]/95 backdrop-blur-md border-b border-primary-200/70 py-3.5">
-      <div class="max-w-7xl mx-auto px-6 sm:px-8 flex items-center justify-between">
-        <a href="#inicio" class="flex items-center space-x-3">
-          <div class="h-10 w-10 rounded-full flex items-center justify-center border border-primary-200 text-primary-800 bg-primary-100/70">
-            <i data-lucide="coffee" class="h-5 w-5"></i>
-          </div>
-          <div>
-            <span class="font-serif text-lg sm:text-xl font-medium tracking-tight block text-primary-950">Delícias da Vovó</span>
-            <span class="text-[9px] uppercase tracking-[0.2em] block -mt-1 font-normal text-primary-600">Padaria & Confeitaria</span>
-          </div>
-        </a>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vitrines · Delícias da Vovó</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #FAF5EE;
+  --warm: #F5ECD8;
+  --brown: #5C3D2E;
+  --brown-mid: #8B5E4A;
+  --brown-light: #C49A7A;
+  --gold: #D4A843;
+  --gold-light: #F0D08A;
+  --green: #4A7C59;
+  --green-light: #7DB093;
+  --red: #C0392B;
+  --red-light: #E8A09A;
+  --blue: #2C5F8A;
+  --text: #2A1F17;
+  --text-mid: #6B4C3B;
+  --text-light: #A88070;
+  --border: #E2D0BC;
+  --shadow: 0 2px 12px rgba(92,61,46,0.10);
+  --radius: 12px;
+}
 
-        <!-- Links (Desktop) -->
-        <nav class="hidden xl:flex items-center space-x-6">
-          <a href="#inicio" class="text-xs uppercase tracking-widest font-normal text-text-light hover:text-primary-800 transition-colors py-2">Início</a>
-          <a href="#unidades" class="text-xs uppercase tracking-widest font-normal text-text-light hover:text-primary-800 transition-colors py-2">Unidades</a>
-          <a href="#servicos" class="text-xs uppercase tracking-widest font-normal text-text-light hover:text-primary-800 transition-colors py-2">Serviços</a>
-          <a href="#historia" class="text-xs uppercase tracking-widest font-normal text-text-light hover:text-primary-800 transition-colors py-2">Nossa História</a>
-          <a href="#cardapio" class="text-xs uppercase tracking-widest font-normal text-text-light hover:text-primary-800 transition-colors py-2">Destaques</a>
-          <a href="#depoimentos" class="text-xs uppercase tracking-widest font-normal text-text-light hover:text-primary-800 transition-colors py-2">Histórias</a>
-          <a href="#contato" class="text-xs uppercase tracking-widest font-normal text-text-light hover:text-primary-800 transition-colors py-2">Fale Conosco</a>
-        </nav>
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
-        <div class="hidden xl:block">
-          <a href="#cardapio" class="text-xs font-normal uppercase tracking-widest px-5 py-2.5 rounded-full border border-primary-300 bg-primary-100/70 text-primary-950 hover:bg-primary-200 transition-all duration-300">
-            Encomendar
-          </a>
-        </div>
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  min-height: 100vh;
+}
 
-        <button id="menu-toggle-btn" class="xl:hidden p-2 rounded-lg text-primary-900 hover:bg-primary-100/70 outline-none">
-          <i data-lucide="menu" class="h-6 w-6"></i>
-        </button>
-      </div>
-    </header>
+/* HEADER */
+.header {
+  background: var(--brown);
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 16px rgba(92,61,46,0.25);
+}
+.header-logo {
+  font-family: 'Playfair Display', serif;
+  color: var(--gold-light);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+.header-logo span { color: #fff; font-weight: 500; font-size: 13px; display: block; line-height: 1; margin-top: 1px; font-family: 'DM Sans', sans-serif; letter-spacing: 0; }
+.unit-switcher {
+  display: flex;
+  gap: 6px;
+}
+.unit-btn {
+  background: rgba(255,255,255,0.12);
+  border: 1.5px solid rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.75);
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all .2s;
+  font-family: 'DM Sans', sans-serif;
+}
+.unit-btn.active {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--brown);
+  font-weight: 600;
+}
 
-    <!-- Mobile Drawer -->
-    <div id="mobile-menu-overlay" class="fixed inset-0 bg-black/50 z-40 hidden opacity-0 transition-opacity duration-300 backdrop-blur-xs"></div>
-    <div id="mobile-menu-drawer" class="fixed top-0 right-0 h-full w-[270px] bg-[#faf7f2] z-50 shadow-2xl p-6 flex flex-col space-y-6 transform translate-x-full transition-transform duration-300 ease-out">
-      <div class="flex justify-between items-center pb-4 border-b border-primary-100">
-        <span class="font-serif text-lg font-medium text-primary-950">Navegação</span>
-        <button id="menu-close-btn" class="p-1 px-2.5 rounded-full hover:bg-primary-100 text-text-light transition-colors">
-          <i data-lucide="x" class="h-5 w-5"></i>
-        </button>
-      </div>
-      <nav class="flex flex-col space-y-3.5">
-        <a href="#inicio" class="mobile-nav-link block py-2.5 px-3 text-sm font-normal text-text-dark hover:bg-primary-100 hover:text-primary-800 transition-all rounded-lg uppercase tracking-wider text-xs">Início</a>
-        <a href="#unidades" class="mobile-nav-link block py-2.5 px-3 text-sm font-normal text-text-dark hover:bg-primary-100 hover:text-primary-800 transition-all rounded-lg uppercase tracking-wider text-xs">Unidades</a>
-        <a href="#servicos" class="mobile-nav-link block py-2.5 px-3 text-sm font-normal text-text-dark hover:bg-primary-100 hover:text-primary-800 transition-all rounded-lg uppercase tracking-wider text-xs">Serviços</a>
-        <a href="#historia" class="mobile-nav-link block py-2.5 px-3 text-sm font-normal text-text-dark hover:bg-primary-100 hover:text-primary-800 transition-all rounded-lg uppercase tracking-wider text-xs">Nossa História</a>
-        <a href="#cardapio" class="mobile-nav-link block py-2.5 px-3 text-sm font-normal text-text-dark hover:bg-primary-100 hover:text-primary-800 transition-all rounded-lg uppercase tracking-wider text-xs">Destaques</a>
-        <a href="#depoimentos" class="mobile-nav-link block py-2.5 px-3 text-sm font-normal text-text-dark hover:bg-primary-100 hover:text-primary-800 transition-all rounded-lg uppercase tracking-wider text-xs">Histórias</a>
-        <a href="#contato" class="mobile-nav-link block py-2.5 px-3 text-sm font-normal text-text-dark hover:bg-primary-100 hover:text-primary-800 transition-all rounded-lg uppercase tracking-wider text-xs">Fale Conosco</a>
-      </nav>
-      <div class="pt-4 border-t border-primary-100 flex-1 flex flex-col justify-end">
-        <a href="#cardapio" class="mobile-nav-link block w-full text-center bg-primary-900 text-white py-3 text-xs font-normal uppercase tracking-widest transition-all hover:bg-primary-800 rounded-full">
-          Fazer Encomenda
-        </a>
+/* NAV */
+.nav {
+  background: #fff;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding: 0 16px;
+}
+.nav::-webkit-scrollbar { display: none; }
+.nav-btn {
+  background: none;
+  border: none;
+  padding: 14px 18px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-mid);
+  cursor: pointer;
+  white-space: nowrap;
+  border-bottom: 2.5px solid transparent;
+  transition: all .2s;
+  font-family: 'DM Sans', sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.nav-btn.active {
+  color: var(--brown);
+  border-bottom-color: var(--gold);
+  font-weight: 600;
+}
+.nav-btn:hover:not(.active) { color: var(--brown); background: var(--warm); }
+
+/* PAGES */
+.page { display: none; padding: 24px 20px; max-width: 960px; margin: 0 auto; }
+.page.active { display: block; }
+
+/* SECTION TITLE */
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  color: var(--brown);
+  margin-bottom: 4px;
+}
+.section-sub { font-size: 13px; color: var(--text-light); margin-bottom: 24px; }
+
+/* CARD */
+.card {
+  background: #fff;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  padding: 20px;
+  margin-bottom: 16px;
+  box-shadow: var(--shadow);
+}
+
+/* FORM */
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+.form-row.three { grid-template-columns: 1fr 1fr 1fr; }
+.form-row.full { grid-template-columns: 1fr; }
+.form-group { display: flex; flex-direction: column; gap: 4px; }
+.form-group label { font-size: 11px; font-weight: 600; color: var(--text-mid); text-transform: uppercase; letter-spacing: 0.5px; }
+.form-group input, .form-group select, .form-group textarea {
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-family: 'DM Sans', sans-serif;
+  color: var(--text);
+  background: var(--cream);
+  transition: border-color .2s;
+  outline: none;
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+  border-color: var(--brown-light);
+  background: #fff;
+}
+.form-group textarea { resize: vertical; min-height: 70px; }
+
+/* BUTTONS */
+.btn {
+  padding: 9px 20px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  font-family: 'DM Sans', sans-serif;
+  transition: all .15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.btn-primary { background: var(--brown); color: #fff; }
+.btn-primary:hover { background: var(--brown-mid); }
+.btn-gold { background: var(--gold); color: var(--brown); }
+.btn-gold:hover { background: var(--gold-light); }
+.btn-green { background: var(--green); color: #fff; }
+.btn-green:hover { background: var(--green-light); }
+.btn-red { background: var(--red); color: #fff; font-size: 12px; padding: 6px 12px; }
+.btn-ghost { background: transparent; border: 1.5px solid var(--border); color: var(--text-mid); }
+.btn-ghost:hover { border-color: var(--brown-light); color: var(--brown); }
+.btn-sm { padding: 5px 12px; font-size: 12px; }
+
+/* BADGE */
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+}
+.badge-a { background: #D4EDDA; color: #1D6B35; }
+.badge-b { background: #FFF3CD; color: #856404; }
+.badge-c { background: #F8D7DA; color: #721C24; }
+.badge-green { background: #D4EDDA; color: #1D6B35; }
+.badge-red { background: #F8D7DA; color: #721C24; }
+.badge-yellow { background: #FFF3CD; color: #856404; }
+
+/* PRODUCT TABLE */
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th { text-align: left; padding: 10px 12px; border-bottom: 2px solid var(--border); color: var(--text-mid); font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap; }
+td { padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: var(--warm); }
+
+/* ABC BAR */
+.abc-bar { display: flex; height: 6px; border-radius: 4px; overflow: hidden; margin: 8px 0; }
+.abc-bar-a { background: var(--green); }
+.abc-bar-b { background: var(--gold); }
+.abc-bar-c { background: var(--red-light); }
+
+/* DAY TABS */
+.day-tabs { display: flex; gap: 6px; margin-bottom: 16px; flex-wrap: wrap; }
+.day-tab {
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1.5px solid var(--border);
+  background: #fff;
+  color: var(--text-mid);
+  transition: all .15s;
+  font-family: 'DM Sans', sans-serif;
+}
+.day-tab.active { background: var(--brown); border-color: var(--brown); color: #fff; }
+.day-tab:hover:not(.active) { border-color: var(--brown-light); color: var(--brown); }
+
+/* VITRINE GRID */
+.vitrine-container { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.vitrine-section-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--text-light);
+  margin-bottom: 10px;
+}
+
+.vitrine-grid {
+  display: grid;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+.vitrine-slot {
+  background: var(--warm);
+  border: 1.5px dashed var(--border);
+  border-radius: 8px;
+  min-height: 52px;
+  padding: 6px 8px;
+  cursor: pointer;
+  transition: all .15s;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.vitrine-slot:hover { border-color: var(--brown-light); background: #fff; }
+.vitrine-slot.filled { background: #fff; border-style: solid; border-color: var(--gold); }
+.vitrine-slot.filled:hover { border-color: var(--brown); }
+.vitrine-slot .slot-num {
+  position: absolute;
+  top: 4px;
+  left: 6px;
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--text-light);
+}
+.vitrine-slot .slot-content { margin-left: 4px; }
+.vitrine-slot .slot-name { font-size: 12px; font-weight: 600; color: var(--brown); line-height: 1.2; }
+.vitrine-slot .slot-qty { font-size: 11px; color: var(--text-light); }
+.vitrine-slot .slot-remove {
+  position: absolute;
+  top: 4px;
+  right: 6px;
+  font-size: 14px;
+  color: var(--text-light);
+  cursor: pointer;
+  line-height: 1;
+  padding: 2px;
+}
+.vitrine-slot .slot-remove:hover { color: var(--red); }
+.vitrine-slot.empty .slot-plus {
+  font-size: 18px;
+  color: var(--border);
+  margin: auto;
+}
+
+/* VITRINE LIST */
+.vitrine-list-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-bottom: 6px;
+}
+.vitrine-list-item .li-num {
+  width: 22px;
+  height: 22px;
+  background: var(--warm);
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--brown);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.vitrine-list-item .li-name { flex: 1; font-size: 13px; font-weight: 500; }
+.vitrine-list-item .li-qty { font-size: 12px; color: var(--text-light); }
+.vitrine-list-item .li-badge { }
+
+/* CRONOGRAMA */
+.cronograma-row {
+  display: grid;
+  grid-template-columns: 80px 1fr auto;
+  gap: 10px;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+.cronograma-row:last-child { border-bottom: none; }
+.crono-time { font-size: 13px; font-weight: 700; color: var(--brown); }
+.crono-task { font-size: 13px; }
+.crono-resp { font-size: 11px; color: var(--text-light); }
+
+/* PERDAS */
+.perda-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--red);
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+.perda-icon { font-size: 20px; }
+.perda-info { flex: 1; }
+.perda-name { font-size: 13px; font-weight: 600; }
+.perda-detail { font-size: 12px; color: var(--text-light); }
+.perda-custo { font-size: 13px; font-weight: 700; color: var(--red); white-space: nowrap; }
+
+/* PEDIDO DE PRODUÇÃO */
+.pedido-header {
+  background: var(--brown);
+  color: #fff;
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.pedido-title { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--gold-light); }
+.pedido-sub { font-size: 12px; color: rgba(255,255,255,0.65); margin-top: 2px; }
+.pedido-item {
+  display: grid;
+  grid-template-columns: 1fr 60px 80px 100px 120px;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+}
+.pedido-head {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-light);
+  padding: 6px 12px;
+  background: var(--warm);
+  border-radius: 6px;
+  margin-bottom: 4px;
+  display: grid;
+  grid-template-columns: 1fr 60px 80px 100px 120px;
+  gap: 10px;
+}
+.pedido-item:last-child { border-bottom: none; }
+.prod-name { font-weight: 600; }
+.prod-resp { font-size: 11px; color: var(--text-light); }
+
+/* MODAL */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(42,31,23,0.55);
+  z-index: 200;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.modal-overlay.open { display: flex; }
+.modal {
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 16px 48px rgba(92,61,46,0.25);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+.modal-title { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--brown); margin-bottom: 16px; }
+.modal-actions { display: flex; gap: 8px; justify-content: flex-end; margin-top: 16px; }
+
+/* TOAST */
+.toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: var(--brown);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 500;
+  z-index: 999;
+  transform: translateY(80px);
+  opacity: 0;
+  transition: all .3s;
+  max-width: 300px;
+  box-shadow: var(--shadow);
+}
+.toast.show { transform: translateY(0); opacity: 1; }
+.toast.toast-success { border-left: 4px solid var(--green); }
+.toast.toast-error { border-left: 4px solid var(--red); }
+
+/* STATS ROW */
+.stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 20px; }
+.stat-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  text-align: center;
+}
+.stat-value { font-family: 'Playfair Display', serif; font-size: 26px; color: var(--brown); }
+.stat-label { font-size: 11px; color: var(--text-light); margin-top: 2px; }
+
+/* TOGGLE */
+.toggle-row { display: flex; gap: 6px; margin-bottom: 14px; }
+.toggle-btn {
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1.5px solid var(--border);
+  background: #fff;
+  color: var(--text-mid);
+  font-family: 'DM Sans', sans-serif;
+  transition: all .15s;
+}
+.toggle-btn.active { background: var(--brown); border-color: var(--brown); color: #fff; }
+
+/* EMPTY STATE */
+.empty-state { text-align: center; padding: 40px 20px; color: var(--text-light); }
+.empty-state .empty-icon { font-size: 40px; margin-bottom: 10px; }
+.empty-state p { font-size: 14px; }
+
+/* RESPONSIVE */
+@media (max-width: 640px) {
+  .vitrine-container { grid-template-columns: 1fr; }
+  .stats-row { grid-template-columns: 1fr 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .form-row.three { grid-template-columns: 1fr; }
+  .pedido-item, .pedido-head { grid-template-columns: 1fr 50px 70px; }
+  .pedido-item > :nth-child(4), .pedido-item > :nth-child(5),
+  .pedido-head > :nth-child(4), .pedido-head > :nth-child(5) { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-logo">
+    Delícias da Vovó
+    <span>Gestão de Vitrines</span>
+  </div>
+  <div class="unit-switcher">
+    <button class="unit-btn active" onclick="setUnit('matriz')">Matriz</button>
+    <button class="unit-btn" onclick="setUnit('vilanova')">Vila Nova</button>
+  </div>
+</div>
+
+<!-- NAV -->
+<div class="nav">
+  <button class="nav-btn active" onclick="showPage('vitrine')">🪟 Vitrines</button>
+  <button class="nav-btn" onclick="showPage('cronograma')">⏱ Cronograma</button>
+  <button class="nav-btn" onclick="showPage('produtos')">📦 Produtos</button>
+  <button class="nav-btn" onclick="showPage('perdas')">⚠️ Perdas</button>
+  <button class="nav-btn" onclick="showPage('pedido')">📋 Pedido de Produção</button>
+</div>
+
+<!-- ===================== PAGE: VITRINE ===================== -->
+<div class="page active" id="page-vitrine">
+  <h2 class="section-title">Vitrine da Semana</h2>
+  <p class="section-sub" id="vitrine-unidade-label">Unidade: Matriz — clique em uma posição para adicionar produto</p>
+
+  <div class="day-tabs" id="day-tabs">
+    <button class="day-tab active" onclick="setDay('seg')">Seg</button>
+    <button class="day-tab" onclick="setDay('ter')">Ter</button>
+    <button class="day-tab" onclick="setDay('qua')">Qua</button>
+    <button class="day-tab" onclick="setDay('qui')">Qui</button>
+    <button class="day-tab" onclick="setDay('sex')">Sex</button>
+    <button class="day-tab" onclick="setDay('sab')">Sáb</button>
+    <button class="day-tab" onclick="setDay('dom')">Dom</button>
+  </div>
+
+  <div class="toggle-row">
+    <button class="toggle-btn active" onclick="setVitrineView('grade')">🔲 Grade Visual</button>
+    <button class="toggle-btn" onclick="setVitrineView('lista')">📋 Lista</button>
+  </div>
+
+  <div class="vitrine-container">
+    <!-- Grade -->
+    <div>
+      <div class="vitrine-section-label">Grade da Vitrine</div>
+      <div class="vitrine-grid" id="vitrine-grid" style="grid-template-columns: repeat(3, 1fr);"></div>
+      <button class="btn btn-ghost btn-sm" onclick="openAddSlotModal()" style="margin-top:8px;">+ Adicionar posição</button>
+    </div>
+    <!-- Lista -->
+    <div>
+      <div class="vitrine-section-label">Lista de Apoio</div>
+      <div id="vitrine-list"></div>
+      <div style="margin-top:12px;">
+        <button class="btn btn-gold" onclick="openSlotModal(null)">+ Produto na vitrine</button>
       </div>
     </div>
+  </div>
+</div>
 
-    <!-- Hero Section -->
-    <section id="inicio" class="relative min-h-screen flex items-end justify-center pt-24 pb-[12vh] sm:pb-[14vh] overflow-hidden bg-[#faf7f2]">
-      <div class="absolute inset-0 z-0">
-        <img 
-          src="https://res.cloudinary.com/ds53z2vv8/image/upload/v1780353080/copy_of_img_1213_of0ppv.jpg" 
-          alt="Pães artesanais na cestaria" 
-          class="w-full h-full object-cover object-center scale-100 transition-transform duration-1000"
-        />
-        <div class="absolute inset-0 bg-black/38"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-black/58 via-black/16 to-black/26"></div>
+<!-- ===================== PAGE: CRONOGRAMA ===================== -->
+<div class="page" id="page-cronograma">
+  <h2 class="section-title">Cronograma do Dia</h2>
+  <p class="section-sub">Horários de produção e responsáveis por tarefa</p>
+
+  <div class="day-tabs" id="crono-day-tabs">
+    <button class="day-tab active" onclick="setCronoDay('seg')">Seg</button>
+    <button class="day-tab" onclick="setCronoDay('ter')">Ter</button>
+    <button class="day-tab" onclick="setCronoDay('qua')">Qua</button>
+    <button class="day-tab" onclick="setCronoDay('qui')">Qui</button>
+    <button class="day-tab" onclick="setCronoDay('sex')">Sex</button>
+    <button class="day-tab" onclick="setCronoDay('sab')">Sáb</button>
+    <button class="day-tab" onclick="setCronoDay('dom')">Dom</button>
+  </div>
+
+  <div class="card" id="cronograma-list"></div>
+  <div style="margin-top:12px;">
+    <button class="btn btn-primary" onclick="openCronoModal()">+ Adicionar tarefa</button>
+  </div>
+</div>
+
+<!-- ===================== PAGE: PRODUTOS ===================== -->
+<div class="page" id="page-produtos">
+  <h2 class="section-title">Cadastro de Produtos</h2>
+  <p class="section-sub">Curva ABC, validade e responsável de produção</p>
+
+  <div class="stats-row" id="abc-stats">
+    <div class="stat-card"><div class="stat-value" id="stat-total">0</div><div class="stat-label">Produtos</div></div>
+    <div class="stat-card"><div class="stat-value" style="color:var(--green)" id="stat-a">0</div><div class="stat-label">Curva A</div></div>
+    <div class="stat-card"><div class="stat-value" style="color:var(--gold)" id="stat-b">0</div><div class="stat-label">Curva B</div></div>
+    <div class="stat-card"><div class="stat-value" style="color:var(--red)" id="stat-c">0</div><div class="stat-label">Curva C</div></div>
+  </div>
+
+  <div class="abc-bar" id="abc-bar">
+    <div class="abc-bar-a" style="width:0%"></div>
+    <div class="abc-bar-b" style="width:0%"></div>
+    <div class="abc-bar-c" style="width:0%"></div>
+  </div>
+
+  <div style="display:flex; gap:8px; margin-bottom:16px; flex-wrap:wrap; align-items:center;">
+    <button class="btn btn-primary" onclick="openProdModal()">+ Novo Produto</button>
+    <select id="filter-curva" class="form-group" style="width:auto;" onchange="renderProdutos()">
+      <option value="">Todas as curvas</option>
+      <option value="A">Curva A</option>
+      <option value="B">Curva B</option>
+      <option value="C">Curva C</option>
+    </select>
+    <input type="text" id="filter-search" placeholder="Buscar produto..." style="border:1.5px solid var(--border);border-radius:8px;padding:7px 12px;font-size:13px;font-family:DM Sans,sans-serif;outline:none;background:var(--cream);" oninput="renderProdutos()">
+  </div>
+
+  <div class="card" style="padding:0; overflow:hidden;">
+    <div class="table-wrap">
+      <table id="produtos-table">
+        <thead>
+          <tr>
+            <th>Produto</th>
+            <th>Curva</th>
+            <th>Validade</th>
+            <th>Responsável</th>
+            <th>Custo Unit.</th>
+            <th>Preço</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="produtos-tbody"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== PAGE: PERDAS ===================== -->
+<div class="page" id="page-perdas">
+  <h2 class="section-title">Controle de Perdas & Feedback</h2>
+  <p class="section-sub">Registre produtos estragados, devoluções e feedback de clientes</p>
+
+  <div class="stats-row">
+    <div class="stat-card"><div class="stat-value" id="perdas-total-mes" style="color:var(--red)">R$0</div><div class="stat-label">Perdas este mês</div></div>
+    <div class="stat-card"><div class="stat-value" id="perdas-qtd">0</div><div class="stat-label">Ocorrências</div></div>
+    <div class="stat-card"><div class="stat-value" id="perdas-produto-top">—</div><div class="stat-label">Produto +perdido</div></div>
+    <div class="stat-card"><div class="stat-value" id="perdas-motivo-top">—</div><div class="stat-label">Motivo principal</div></div>
+  </div>
+
+  <div style="display:flex; gap:8px; margin-bottom:16px; flex-wrap:wrap;">
+    <button class="btn btn-red" onclick="openPerdaModal()">⚠️ Registrar Perda</button>
+    <select id="filter-perda-tipo" style="border:1.5px solid var(--border);border-radius:8px;padding:7px 12px;font-size:13px;font-family:DM Sans,sans-serif;outline:none;background:var(--cream);" onchange="renderPerdas()">
+      <option value="">Todos os tipos</option>
+      <option value="vencimento">Vencimento</option>
+      <option value="producao">Erro de produção</option>
+      <option value="cliente">Feedback cliente</option>
+      <option value="acidente">Acidente</option>
+      <option value="outro">Outro</option>
+    </select>
+  </div>
+
+  <div id="perdas-list"></div>
+</div>
+
+<!-- ===================== PAGE: PEDIDO ===================== -->
+<div class="page" id="page-pedido">
+  <h2 class="section-title">Pedido de Produção</h2>
+  <p class="section-sub">Gerado automaticamente com base na vitrine planejada + cronograma + perdas</p>
+
+  <div class="day-tabs" id="pedido-day-tabs">
+    <button class="day-tab active" onclick="setPedidoDay('seg')">Seg</button>
+    <button class="day-tab" onclick="setPedidoDay('ter')">Ter</button>
+    <button class="day-tab" onclick="setPedidoDay('qua')">Qua</button>
+    <button class="day-tab" onclick="setPedidoDay('qui')">Qui</button>
+    <button class="day-tab" onclick="setPedidoDay('sex')">Sex</button>
+    <button class="day-tab" onclick="setPedidoDay('sab')">Sáb</button>
+    <button class="day-tab" onclick="setPedidoDay('dom')">Dom</button>
+  </div>
+
+  <div class="pedido-header">
+    <div>
+      <div class="pedido-title" id="pedido-title">Produção — Segunda-feira</div>
+      <div class="pedido-sub" id="pedido-unidade">Matriz</div>
+    </div>
+    <button class="btn btn-gold" onclick="imprimirPedido()">🖨️ Imprimir</button>
+  </div>
+
+  <div class="card" style="padding:12px;">
+    <div class="pedido-head">
+      <span>Produto</span>
+      <span>Qtd.</span>
+      <span>+Reposição</span>
+      <span>Responsável</span>
+      <span>Horário</span>
+    </div>
+    <div id="pedido-list"></div>
+  </div>
+
+  <div id="pedido-obs" style="margin-top:12px;"></div>
+</div>
+
+<!-- ===================== MODALS ===================== -->
+
+<!-- Modal: Produto -->
+<div class="modal-overlay" id="modal-produto">
+  <div class="modal">
+    <div class="modal-title" id="modal-produto-title">Novo Produto</div>
+    <div class="form-row full"><div class="form-group"><label>Nome do produto</label><input type="text" id="p-nome"></div></div>
+    <div class="form-row three">
+      <div class="form-group"><label>Curva ABC</label>
+        <select id="p-curva"><option value="A">A — Alta demanda</option><option value="B">B — Média</option><option value="C">C — Baixa</option></select>
       </div>
-
-      <div class="relative z-10 max-w-5xl mx-auto px-6 text-center space-y-8">
-        <div class="flex justify-center items-center space-x-3">
-          <div class="h-px w-8 bg-white/55"></div>
-          <span class="font-sans text-[10px] sm:text-xs uppercase tracking-[0.35em] font-normal text-white/90 block">
-            Fazendo delícias desde 2005
-          </span>
-          <div class="h-px w-8 bg-white/55"></div>
-        </div>
-
-        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-display font-extralight text-white/95 tracking-[0.06em] leading-[1.1] max-w-4xl mx-auto normal-case">
-          Paixão em servir
-        </h1>
-
-        <p class="text-white/90 text-sm sm:text-base lg:text-lg max-w-xl mx-auto leading-relaxed font-light">
-          Tradição familiar da <span class="italic font-serif font-medium text-white">Vovó Neusa</span>, receitas que contam histórias inspiradoras e um capricho artesanal único na cidade.
-        </p>
-
-        <div class="pt-4">
-          <a href="#cardapio" class="inline-block border border-white/80 hover:border-white px-9 py-4 text-xs font-normal tracking-[0.25em] text-white uppercase bg-black/25 hover:bg-white hover:text-primary-950 transition-all duration-300 rounded-full shadow-md">
-            Explorar o Cardápio
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Nossas Unidades -->
-    <section id="unidades" class="py-24 max-w-7xl mx-auto px-6 sm:px-8 relative">
-      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
-        <div class="inline-flex items-center space-x-2 bg-primary-100/80 border border-primary-200 px-3 py-1 rounded-full text-[10px] font-normal tracking-[0.2em] text-primary-700 uppercase">
-          <i data-lucide="map-pin" class="h-3 w-3"></i>
-          <span>Nossos Espaços</span>
-        </div>
-        <h2 class="text-4xl sm:text-5xl font-display font-light text-primary-950 tracking-tight">
-          Nossas Unidades
-        </h2>
-        <div class="w-16 h-[1.5px] bg-primary-400 mx-auto"></div>
-        <p class="mt-4 text-text-light text-sm sm:text-base max-w-xl mx-auto leading-relaxed font-light">
-          Cada espaço nosso foi desenhado para acolher suas melhores memórias ao redor da mesa.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16">
-        <!-- Matriz -->
-        <div class="bg-white rounded-[3rem] overflow-hidden border border-primary-200/50 shadow-xs flex flex-col justify-between">
-          <div class="relative h-80 overflow-hidden">
-            <img src="https://res.cloudinary.com/ds53z2vv8/image/upload/v1780341927/IMG_1216_uphbet.jpg" alt="Balcão recheado da nossa Matriz" class="w-full h-full object-cover" />
-            <div class="absolute inset-0 bg-gradient-to-t from-[#1a130e]/80 via-transparent to-transparent"></div>
-            <div class="absolute bottom-6 left-6 right-6">
-              <span class="text-[9px] uppercase tracking-[0.25em] font-normal text-primary-300 block mb-1">Onde tudo começou</span>
-              <h3 class="font-serif text-2xl font-light text-white tracking-tight">Unidade Matriz</h3>
-            </div>
-          </div>
-          <div class="p-8 sm:p-10 space-y-6 flex-1 flex flex-col justify-between">
-            <p class="text-xs sm:text-sm text-text-light leading-relaxed font-light">
-              Foi aqui que tudo começou, em 2005. Nossa padaria foi pensada com muito carinho, em cada detalhe — do cheirinho de pão quentinho que recebe quem chega até a vista para o jardim, que transforma uma parada rápida num momento de pausa. De segunda a sexta, servimos o melhor do dia a dia. Aos sábados e feriados, nosso café por quilo reúne a família em volta da mesa.
-            </p>
-            <div class="pt-6 border-t border-primary-100 grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div class="flex items-start space-x-3 text-xs text-text-light">
-                <i data-lucide="clock" class="h-4.5 w-4.5 text-primary-600 shrink-0 mt-0.5"></i>
-                <div>
-                  <span class="text-[9px] font-normal text-text-light uppercase tracking-widest block mb-0.5">Segunda a Sexta</span>
-                  <span class="font-normal text-text-dark block">06h30 às 20h00</span>
-                </div>
-              </div>
-              <div class="flex items-start space-x-3 text-xs text-[#8c663e]">
-                <i data-lucide="coffee" class="h-4.5 w-4.5 text-primary-600 shrink-0 mt-0.5"></i>
-                <div>
-                  <span class="text-[9px] font-normal text-text-light uppercase tracking-widest block mb-0.5">Sábados e Feriados</span>
-                  <span class="font-normal text-text-dark block">07h00 às 19h00 (Café por quilo)</span>
-                </div>
-              </div>
-              <div class="flex items-start space-x-3 text-xs text-text-light sm:col-span-2">
-                <i data-lucide="map-pin" class="h-4.5 w-4.5 text-primary-600 shrink-0 mt-0.5"></i>
-                <div>
-                  <span class="text-[9px] font-normal text-text-light uppercase tracking-widest block mb-0.5">Endereço</span>
-                  <span class="font-normal text-text-dark block">Av. Principal do Afeto, 2005 - Centro. Tel: (11) 3456-7890</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Vila Nova -->
-        <div class="bg-white rounded-[3rem] overflow-hidden border border-primary-200/50 shadow-xs flex flex-col justify-between">
-          <div class="relative h-80 overflow-hidden">
-            <img src="https://res.cloudinary.com/ds53z2vv8/image/upload/v1780341928/IMG_1335_fochhw.jpg" alt="Cafeteria Vila Nova" class="w-full h-full object-cover" />
-            <div class="absolute inset-0 bg-gradient-to-t from-[#1a130e]/80 via-transparent to-transparent"></div>
-            <div class="absolute bottom-6 left-6 right-6">
-              <span class="text-[9px] uppercase tracking-[0.25em] font-normal text-primary-300 block mb-1">Um refúgio acolhedor</span>
-              <h3 class="font-serif text-2xl font-light text-white tracking-tight">Cafeteria Vila Nova</h3>
-            </div>
-          </div>
-          <div class="p-8 sm:p-10 space-y-6 flex-1 flex flex-col justify-between">
-            <p class="text-xs sm:text-sm text-text-light leading-relaxed font-light">
-              Um espaço mais intimista, com o mesmo charme e o mesmo cuidado da Matriz. Na Vila Nova, selecionamos a dedo cada item do cardápio pra criar uma experiência pensada nos mínimos detalhes — o lugar perfeito pra um café tranquilo, um encontro com quem se gosta ou simplesmente um tempo só seu. Venha saborear nossos espressos de microlote e tortas finas de frutas.
-            </p>
-            <div class="pt-6 border-t border-primary-100 grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div class="flex items-start space-x-3 text-xs text-text-light">
-                <i data-lucide="clock" class="h-4.5 w-4.5 text-primary-600 shrink-0 mt-0.5"></i>
-                <div>
-                  <span class="text-[9px] font-normal text-text-light uppercase tracking-widest block mb-0.5">Segunda a Sexta</span>
-                  <span class="font-normal text-text-dark block">08h00 às 19h00</span>
-                </div>
-              </div>
-              <div class="flex items-start space-x-3 text-xs text-text-light">
-                <i data-lucide="coffee" class="h-4.5 w-4.5 text-primary-600 shrink-0 mt-0.5"></i>
-                <div>
-                  <span class="text-[9px] font-normal text-text-light uppercase tracking-widest block mb-0.5">Sábados</span>
-                  <span class="font-normal text-text-dark block">08h00 às 17h00 (Dom fechado)</span>
-                </div>
-              </div>
-              <div class="flex items-start space-x-3 text-xs text-text-light sm:col-span-2">
-                <i data-lucide="map-pin" class="h-4.5 w-4.5 text-primary-600 shrink-0 mt-0.5"></i>
-                <div>
-                  <span class="text-[9px] font-normal text-text-light uppercase tracking-widest block mb-0.5">Endereço</span>
-                  <span class="font-normal text-text-dark block">Rua das Amendoeiras, 452 - Vila Nova. Tel: (11) 3456-7891</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Serviços -->
-    <section id="servicos" class="scroll-mt-16 py-24 bg-[#f1ebe3] border-y border-primary-200/60">
-      <div class="max-w-7xl mx-auto px-6 sm:px-8">
-        <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
-          <div class="inline-flex items-center space-x-2 bg-white/70 border border-primary-200 px-3 py-1 rounded-full text-[10px] font-normal tracking-[0.2em] text-primary-700 uppercase">
-            <i data-lucide="utensils" class="h-3 w-3"></i>
-            <span>Sabores & Encontros</span>
-          </div>
-          <h2 class="text-4xl sm:text-5xl font-display font-light text-primary-950 tracking-tight">
-            Nossos Serviços
-          </h2>
-          <div class="w-16 h-[1.5px] bg-primary-400 mx-auto"></div>
-          <p class="mt-4 text-text-light text-sm sm:text-base max-w-xl mx-auto leading-relaxed font-light">
-            Da mesa de sábado às celebrações especiais, preparamos cada experiência com o cuidado de sempre.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <article class="bg-white overflow-hidden border border-primary-200/70 rounded-[2rem]">
-            <div class="h-64 overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1776267068270-5abc4a9483cc?auto=format&fit=crop&q=80&w=1200" alt="Mesa de café da manhã com pães e quitutes" class="w-full h-full object-cover" />
-            </div>
-            <div class="p-7 space-y-3">
-              <i data-lucide="coffee" class="h-5 w-5 text-primary-600"></i>
-              <h3 class="font-serif text-2xl font-light text-primary-950">Café por Quilo aos Sábados</h3>
-              <p class="text-xs sm:text-sm text-text-light leading-relaxed font-light">
-                Uma mesa caprichada com pães, bolos, quitutes e sabores caseiros para começar o fim de semana com calma.
-              </p>
-            </div>
-          </article>
-
-          <article class="bg-white overflow-hidden border border-primary-200/70 rounded-[2rem]">
-            <div class="h-64 overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1756066234736-9db92f9a80c8?auto=format&fit=crop&q=80&w=1200" alt="Buffet de almoço com saladas e pratos variados" class="w-full h-full object-cover" />
-            </div>
-            <div class="p-7 space-y-3">
-              <i data-lucide="utensils" class="h-5 w-5 text-primary-600"></i>
-              <h3 class="font-serif text-2xl font-light text-primary-950">Buffet de Almoço</h3>
-              <p class="text-xs sm:text-sm text-text-light leading-relaxed font-light">
-                Receitas frescas e variadas para um almoço acolhedor, preparado com ingredientes selecionados.
-              </p>
-            </div>
-          </article>
-
-          <article class="bg-white overflow-hidden border border-primary-200/70 rounded-[2rem]">
-            <div class="h-64 overflow-hidden">
-              <img src="https://res.cloudinary.com/ds53z2vv8/image/upload/v1773768803/WhatsApp_Image_2026-03-17_at_14.29.44_1_zlp8x4.jpg" alt="Espaço preparado para eventos" class="w-full h-full object-cover" />
-            </div>
-            <div class="p-7 space-y-3">
-              <i data-lucide="party-popper" class="h-5 w-5 text-primary-600"></i>
-              <h3 class="font-serif text-2xl font-light text-primary-950">Espaço para Eventos</h3>
-              <p class="text-xs sm:text-sm text-text-light leading-relaxed font-light">
-                Um ambiente especial para aniversários, encontros e comemorações que merecem ser lembradas.
-              </p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Nossa História -->
-    <section id="historia" class="grid grid-cols-1 lg:grid-cols-12 min-h-[580px] overflow-hidden bg-[#faf7f2] border-y border-primary-100">
-      <div class="lg:col-span-6 relative h-96 lg:h-auto min-h-[400px]">
-        <img 
-          src="https://res.cloudinary.com/ds53z2vv8/image/upload/v1780341926/IMG_1198_pgt0e9.jpg" 
-          alt="Ambiente calmo de jardim" 
-          class="w-full h-full object-cover"
-        />
-        <div class="absolute inset-0 bg-[#4c5c68]/15 mix-blend-multiply"></div>
-        <div class="absolute -bottom-5 right-6 bg-[#1f1a15] text-[#ecdcb5] px-5 py-3 rounded-2xl border border-[#9b8054] shadow-xl max-w-[240px]">
-          <p class="font-display text-sm italic leading-snug font-light">“Com afeto, cada receita carica a dedicação da Vovó.”</p>
-          <div class="mt-2 h-[1px] bg-[#9b8054]/30"></div>
-          <div class="mt-1 flex items-center space-x-1">
-            <i data-lucide="heart" class="h-3 w-3 text-red-400 fill-current"></i>
-            <span class="text-[9px] uppercase tracking-wider font-normal">Dona Neusa</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="lg:col-span-6 bg-[#4c5c68] py-20 px-8 sm:px-16 flex flex-col justify-center space-y-8 relative text-white">
-        <div class="space-y-3">
-          <div class="inline-flex items-center space-x-2 bg-white/10 border border-white/20 px-3 py-1 rounded-full text-[10px] font-normal tracking-[0.2em] uppercase text-[#ecdcb5]">
-            <i data-lucide="sparkles" class="h-3 w-3"></i>
-            <span>Legado & Lembrança</span>
-          </div>
-          <h2 class="text-4xl sm:text-5xl font-display font-light text-white tracking-tight leading-tight">
-            Nossa História
-          </h2>
-          <div class="w-16 h-[1.5px] bg-[#ecdcb5]"></div>
-        </div>
-
-        <div class="space-y-5 text-[#fbf9f5]/90 text-sm sm:text-base leading-relaxed font-sans font-light">
-          <p>
-            Tudo começou com a vontade de partilhar as delícias de uma vovó de mão cheia. Na cozinha da <span class="italic font-serif font-normal text-[#ecdcb5]">Dona Neusa</span>, cada receita carregava mais do que ingredientes: carregava afeto, memória e o desejo de fazer o outro feliz com comida de verdade.
-          </p>
-          <p>
-            O que era feito pra família virou um pedacinho de casa pra cidade inteira. Mais de 20 anos depois, seguimos com a mesma essência — o sabor caseiro, o capricho artesanal e a paixão em servir que dá nome a tudo o que fazemos.
-          </p>
-          <p class="font-serif text-lg text-[#ecdcb5] font-normal italic pt-2">
-            Bem-vindo à Delícias da Vovó. Aqui, você é da família.
-          </p>
-        </div>
-
-        <div class="pt-6 border-t border-white/10 flex items-center justify-between">
-          <div>
-            <span class="text-[10px] uppercase tracking-widest font-normal text-[#ecdcb5]/85 block mb-1">Cozinha Afetuosa</span>
-            <span class="font-display text-xl font-light text-white italic block">Com afeto, Vovó Neusa & Família</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Menu Destaques / Cardápio -->
-    <section id="cardapio" class="py-24 max-w-7xl mx-auto px-6 sm:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
-        <div class="inline-flex items-center space-x-2 bg-primary-100/80 border border-primary-200 px-3 py-1 rounded-full text-[10px] font-normal tracking-[0.2em] text-primary-700 uppercase">
-          <i data-lucide="chef-hat" class="h-3 w-3"></i>
-          <span>Seleção Especial</span>
-        </div>
-        <h2 class="text-4xl sm:text-5xl font-display font-light text-primary-950 tracking-tight">
-          Menu Destaques
-        </h2>
-        <div class="w-16 h-[1.5px] bg-primary-400 mx-auto"></div>
-        <p class="mt-4 text-text-light text-sm sm:text-base max-w-xl mx-auto leading-relaxed font-light">
-          Encomende previamente as delícias fresquinhas feitas sob medida com o amor de vó para sua casa.
-        </p>
-      </div>
-
-      <!-- Categories Filter Tabs -->
-      <div class="flex flex-wrap items-center justify-center gap-2 mb-12">
-        <button data-category-tab="all" class="px-5 py-2.5 rounded-full text-[10px] sm:text-xs font-normal tracking-widest uppercase transition-all duration-300 pointer-events-auto border outline-none bg-primary-950 border-primary-950 text-white shadow-xs">
-          Todas
-        </button>
-        <button data-category-tab="panificacao" class="px-5 py-2.5 rounded-full text-[10px] sm:text-xs font-normal tracking-widest uppercase transition-all duration-300 pointer-events-auto border outline-none bg-white border-primary-200/60 text-[#6a5e53] hover:bg-primary-100/30">
-          Panificação
-        </button>
-        <button data-category-tab="confeitaria" class="px-5 py-2.5 rounded-full text-[10px] sm:text-xs font-normal tracking-widest uppercase transition-all duration-300 pointer-events-auto border outline-none bg-white border-primary-200/60 text-[#6a5e53] hover:bg-primary-100/30">
-          Confeitaria
-        </button>
-        <button data-category-tab="bebidas" class="px-5 py-2.5 rounded-full text-[10px] sm:text-xs font-normal tracking-widest uppercase transition-all duration-300 pointer-events-auto border outline-none bg-white border-primary-200/60 text-[#6a5e53] hover:bg-primary-100/30">
-          Bebidas
-        </button>
-        <button data-category-tab="brunch" class="px-5 py-2.5 rounded-full text-[10px] sm:text-xs font-normal tracking-widest uppercase transition-all duration-300 pointer-events-auto border outline-none bg-white border-primary-200/60 text-[#6a5e53] hover:bg-primary-100/30">
-          Café e Brunch
-        </button>
-      </div>
-
-      <!-- Products Grid -->
-      <div id="products-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <!-- Dynamically injected via script -->
-      </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="depoimentos" class="py-24 bg-white border-y border-primary-100">
-      <div class="max-w-7xl mx-auto px-6 sm:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 sm:gap-16 items-start">
-          <!-- Left Column -->
-          <div class="lg:col-span-6 space-y-8">
-            <div class="space-y-3">
-              <span class="text-[9px] uppercase font-normal tracking-[0.2em] text-primary-600 block">Opinião de quem nos visita</span>
-              <h3 class="font-display text-3xl font-light text-primary-950 uppercase">Histórias Acolhedoras</h3>
-              <div class="w-12 h-[1px] bg-primary-400"></div>
-            </div>
-
-            <div class="space-y-6">
-              <!-- Testimonial 1 -->
-              <div class="bg-primary-50/50 p-6 rounded-2xl border border-primary-200/40 space-y-4">
-                <div class="flex items-center justify-between">
-                  <div>
-                    <span class="text-sm font-medium text-primary-950 block">Lucas Mendes</span>
-                    <span class="text-[10px] text-text-light block">Há 1 semana na Matriz</span>
-                  </div>
-                  <div class="flex text-primary-500 text-xs">
-                    <i data-lucide="star" class="h-3.5 w-3.5 fill-current"></i>
-                    <i data-lucide="star" class="h-3.5 w-3.5 fill-current"></i>
-                    <i data-lucide="star" class="h-3.5 w-3.5 fill-current"></i>
-                    <i data-lucide="star" class="h-3.5 w-3.5 fill-current"></i>
-                    <i data-lucide="star" class="h-3.5 w-3.5 fill-current"></i>
-                  </div>
-                </div>
-                <p class="text-xs sm:text-sm text-text-light leading-relaxed font-light italic">
-                  "O pão de fermentação natural é simplesmente incrível. Lembra os cafés da manhã na casa da minha vó no interior. Crocante por fora e muito macio por dentro."
-                </p>
-              </div>
-
-              <!-- Testimonial 2 -->
-              <div class="bg-primary-50/50 p-6 rounded-2xl border border-primary-200/40 space-y-4">
-                <div class="flex items-center justify-between">
-                  <div>
-                    <span class="text-sm font-medium text-primary-950 block">Mariana Rocha</span>
-                    <span class="text-[10px] text-text-light block">Há 3 dias na Vila Nova</span>
-                  </div>
-                  <div class="flex text-primary-500 text-xs">
-                    <i data-lucide="star" class="h-3.5 w-3.5 fill-current"></i>
-                    <i data-lucide="star" class="h-3.5 w-3.5 fill-current"></i>
-                    <i data-lucide="star" class="h-3.5 w-3.5 fill-current"></i>
-                    <i data-lucide="star" class="h-3.5 w-3.5 fill-current"></i>
-                    <i data-lucide="star" class="h-3.5 w-3.5 fill-current"></i>
-                  </div>
-                </div>
-                <p class="text-xs sm:text-sm text-text-light leading-relaxed font-light italic">
-                  "Melhor cappuccino que já tomei na vida. E as atendentes são um amor de pessoa. Tratamento muito receptivo."
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Right Column (Contact & Feedback Form) -->
-          <div id="contato" class="lg:col-span-6 bg-[#faf7f2] p-8 sm:p-10 rounded-[2.5rem] border border-primary-200/50 space-y-8">
-            <div class="space-y-1">
-              <h4 class="font-serif text-2xl font-light text-primary-950">Deixe uma mensagem</h4>
-              <p class="text-xs text-text-light leading-relaxed font-light">
-                Escreva para nós! Dúvidas de encomendas, elogios ou apenas um alô afetuoso para a Vovó.
-              </p>
-            </div>
-
-            <form onsubmit="handleSendFeedback(event)" class="space-y-4">
-              <div>
-                <label class="block text-[10px] font-normal uppercase tracking-widest text-text-light mb-1.5">Seu Nome</label>
-                <input id="feedback-name" type="text" required class="w-full bg-white border border-primary-200 rounded-full px-5 py-3 text-xs outline-none focus:border-primary-450 transition-all font-sans font-light" placeholder="Como deseja ser chamado?" />
-              </div>
-              <div>
-                <label class="block text-[10px] font-normal uppercase tracking-widest text-text-light mb-1.5">Sua Mensagem</label>
-                <textarea id="feedback-msg" required rows="4" class="w-full bg-white border border-primary-200 rounded-[1.5rem] p-5 text-xs outline-none focus:border-primary-450 transition-all font-sans font-light resize-none" placeholder="O que gostaria de dizer à nossa equipe?"></textarea>
-              </div>
-              <button type="submit" class="w-full bg-primary-950 hover:bg-primary-900 text-white py-3.5 rounded-full font-normal text-xs uppercase tracking-[0.2em] transition-colors flex items-center justify-center space-x-2 outline-none">
-                <i data-lucide="send" class="h-3.5 w-3.5"></i>
-                <span>Enviar Mensagem</span>
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Sticky Floating Cart Indicator bar -->
-    <div id="cart-floating-bar" class="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-40 w-[92%] sm:w-auto sm:min-w-[420px] bg-primary-950 text-white rounded-full px-6 py-4 hidden items-center justify-between shadow-xl cursor-pointer hover:bg-primary-900 transition-all duration-300" onclick="openOrderDrawer()">
-      <div class="flex items-center space-x-4">
-        <div class="relative">
-          <i data-lucide="shopping-bag" class="h-6 w-6 text-primary-200"></i>
-          <span id="cart-count-indicator" class="absolute -top-2 -right-2 bg-red-500 text-white font-normal text-[10px] h-5 w-5 rounded-full flex items-center justify-center border-2 border-primary-950">
-            0
-          </span>
-        </div>
-        <div>
-          <span class="text-[9px] uppercase opacity-75 block tracking-widest leading-none font-normal">Sua Encomenda</span>
-          <span id="cart-total-indicator" class="font-normal text-xs text-[#ecdcb5]">R$ 0,00</span>
-        </div>
-      </div>
-      <div class="flex items-center space-x-2 text-primary-200 text-xs font-normal tracking-wider uppercase text-[10px]">
-        <span>Ver Pedido</span>
-        <i data-lucide="arrow-right" class="h-4 w-4"></i>
+      <div class="form-group"><label>Validade (dias)</label><input type="number" id="p-validade" min="1" placeholder="ex: 3"></div>
+      <div class="form-group"><label>Categoria</label>
+        <select id="p-categoria">
+          <option>Bolo</option><option>Pão</option><option>Torta</option><option>Salgado</option><option>Doce</option><option>Bebida</option><option>Outro</option>
+        </select>
       </div>
     </div>
-
-    <!-- Order Review Side Drawer -->
-    <div id="order-drawer-overlay" class="fixed inset-0 bg-black/60 z-50 hidden opacity-0 transition-opacity duration-300 backdrop-blur-xs" onclick="closeOrderDrawer()"></div>
-    <div id="order-drawer" class="fixed top-0 right-0 h-full w-full sm:w-[500px] bg-[#faf7f2] z-50 shadow-2xl flex flex-col justify-between transform translate-x-full transition-transform duration-300 ease-out">
-      <div class="p-6 border-b border-primary-100 flex items-center justify-between bg-white">
-        <div class="flex items-center space-x-2.5">
-          <i data-lucide="shopping-bag" class="h-5 w-5 text-primary-900"></i>
-          <h3 class="font-serif text-lg font-medium text-primary-950 uppercase tracking-wide">Seu Pedido</h3>
-        </div>
-        <button onclick="closeOrderDrawer()" class="p-1 px-3 rounded-full hover:bg-primary-50 text-xs uppercase tracking-widest text-[#6a5e53]">
-          Fechar
-        </button>
+    <div class="form-row">
+      <div class="form-group"><label>Custo unitário (R$)</label><input type="number" id="p-custo" step="0.01" placeholder="0,00"></div>
+      <div class="form-group"><label>Preço de venda (R$)</label><input type="number" id="p-preco" step="0.01" placeholder="0,00"></div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label>Responsável produção</label>
+        <select id="p-resp">
+          <option>Alexandre</option><option>Tiago</option><option>Anderson</option><option>Lucas</option><option>Outro</option>
+        </select>
       </div>
-
-      <div id="order-items-list" class="flex-1 overflow-y-auto p-6 space-y-4">
-        <!-- Injected dynamically -->
-      </div>
-
-      <div class="p-6 border-t border-primary-100 bg-white space-y-5">
-        <div>
-          <label class="block text-[10px] font-normal uppercase tracking-widest text-text-light mb-2">Unidade para Retirada</label>
-          <div class="grid grid-cols-2 gap-2">
-            <button data-unit-select="matriz" onclick="setPickupUnit('matriz')" class="text-[10px] font-normal uppercase tracking-widest p-3 border rounded-full transition-all duration-300 bg-primary-950 border-primary-950 text-white animate-fade">
-              Unidade Matriz
-            </button>
-            <button data-unit-select="vilanova" onclick="setPickupUnit('vilanova')" class="text-[10px] font-normal uppercase tracking-widest p-3 border border-primary-200 text-text-light hover:bg-[#FAF6F0] rounded-full transition-all duration-300">
-              Vila Nova
-            </button>
-          </div>
-        </div>
-
-        <div class="space-y-2 pt-2">
-          <div class="flex justify-between text-[11px] text-text-light">
-            <span>Taxa de Embalagem & Retirada</span>
-            <span class="text-emerald-700 font-normal uppercase tracking-wider text-[10px]">Cortesia</span>
-          </div>
-          <div class="h-[1px] bg-primary-100 my-2"></div>
-          <div class="flex justify-between font-serif text-base font-medium text-primary-950 uppercase tracking-wide">
-            <span>Total Estimado</span>
-            <span id="order-summary-total">R$ 0,00</span>
-          </div>
-        </div>
-
-        <button onclick="handleWhatsappOrder()" class="w-full bg-[#1b5e20] hover:bg-[#124116] text-white py-4 rounded-full font-normal text-xs tracking-widest uppercase flex items-center justify-center space-x-2 shadow-md transition-all duration-300">
-          <i data-lucide="message-circle" class="h-4.5 w-4.5"></i>
-          <span>Concluir via WhatsApp</span>
-        </button>
+      <div class="form-group"><label>Unidade(s)</label>
+        <select id="p-unidade">
+          <option value="ambas">Ambas</option><option value="matriz">Matriz</option><option value="vilanova">Vila Nova</option>
+        </select>
       </div>
     </div>
+    <div class="form-row full"><div class="form-group"><label>Observações</label><textarea id="p-obs" rows="2"></textarea></div></div>
+    <input type="hidden" id="p-id">
+    <div class="modal-actions">
+      <button class="btn btn-ghost" onclick="closeModal('modal-produto')">Cancelar</button>
+      <button class="btn btn-primary" onclick="saveProduto()">Salvar</button>
+    </div>
+  </div>
+</div>
 
-    <!-- Footer -->
-    <footer class="bg-primary-950 text-[#eedec6]/90 py-20 border-t border-white/5 font-sans">
-      <div class="max-w-7xl mx-auto px-6 sm:px-8 grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-white/5 pb-16">
-        <div class="space-y-4">
-          <div class="flex items-center space-x-2">
-            <i data-lucide="coffee" class="h-5 w-5 text-[#ecdcb5]"></i>
-            <span class="font-serif text-lg font-medium text-white tracking-wide">Delícias da Vovó</span>
-          </div>
-          <p class="text-xs text-[#eedec6]/60 leading-relaxed font-light">
-            Cozinhando afeto e partilhando deliciosas histórias com sabor caseiro e capricho artesanal desde 2005.
-          </p>
-        </div>
-
-        <div class="space-y-3">
-          <span class="text-[10px] uppercase font-normal tracking-widest text-[#ecdcb5] block border-b border-white/5 pb-2">Unidade Matriz</span>
-          <ul class="space-y-2 text-xs text-[#eedec6]/75 leading-relaxed font-light">
-            <li class="flex items-start space-x-2">
-              <i data-lucide="map-pin" class="h-4 w-4 shrink-0 text-primary-450"></i>
-              <span>Av. Principal do Afeto, 2005 - Centro</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <i data-lucide="phone" class="h-4 w-4 shrink-0 text-primary-450"></i>
-              <span>(11) 3456-7890</span>
-            </li>
-          </ul>
-        </div>
-
-        <div class="space-y-3">
-          <span class="text-[10px] uppercase font-normal tracking-widest text-[#ecdcb5] block border-b border-white/5 pb-2">Cafeteria Vila Nova</span>
-          <ul class="space-y-2 text-xs text-[#eedec6]/75 leading-relaxed font-light">
-            <li class="flex items-start space-x-2">
-              <i data-lucide="map-pin" class="h-4 w-4 shrink-0 text-primary-450"></i>
-              <span>Rua das Amendoeiras, 452 - Vila Nova</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <i data-lucide="phone" class="h-4 w-4 shrink-0 text-primary-450"></i>
-              <span>(11) 3456-7891</span>
-            </li>
-          </ul>
-        </div>
-
-        <div class="space-y-3">
-          <span class="text-[10px] uppercase font-normal tracking-widest text-[#ecdcb5] block border-b border-white/5 pb-2">Navegação Expressa</span>
-          <ul class="space-y-2 text-xs text-[#eedec6]/70 font-light">
-            <li><a href="#unidades" class="hover:text-white transition-colors">Nossos Espaços</a></li>
-            <li><a href="#servicos" class="hover:text-white transition-colors">Serviços</a></li>
-            <li><a href="#historia" class="hover:text-white transition-colors">Nossa História</a></li>
-            <li><a href="#cardapio" class="hover:text-white transition-colors">Menu de Encomendas</a></li>
-          </ul>
-        </div>
+<!-- Modal: Slot Vitrine -->
+<div class="modal-overlay" id="modal-slot">
+  <div class="modal">
+    <div class="modal-title">Adicionar à Vitrine</div>
+    <div class="form-row full">
+      <div class="form-group"><label>Produto</label>
+        <select id="slot-produto"></select>
       </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label>Quantidade na vitrine</label><input type="number" id="slot-qty" min="1" value="1"></div>
+      <div class="form-group"><label>Posição (slot)</label><input type="number" id="slot-pos" min="1" value="1"></div>
+    </div>
+    <input type="hidden" id="slot-edit-idx">
+    <div class="modal-actions">
+      <button class="btn btn-ghost" onclick="closeModal('modal-slot')">Cancelar</button>
+      <button class="btn btn-primary" onclick="saveSlot()">Salvar</button>
+    </div>
+  </div>
+</div>
 
-      <div class="max-w-7xl mx-auto px-6 sm:px-8 pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-[#eedec6]/50 font-light leading-relaxed">
-        <p>© 2026 Padaria Delícias da Vovó Ltda. CNPJ 12.345.678/0001-90.</p>
-        <p class="mt-2 sm:mt-0 uppercase tracking-[0.1em] text-[#eedec6]/40 text-right">Feito com carinho e dedicação artesanal.</p>
+<!-- Modal: Cronograma -->
+<div class="modal-overlay" id="modal-crono">
+  <div class="modal">
+    <div class="modal-title">Tarefa do Cronograma</div>
+    <div class="form-row">
+      <div class="form-group"><label>Horário</label><input type="time" id="crono-hora"></div>
+      <div class="form-group"><label>Responsável</label>
+        <select id="crono-resp">
+          <option>Alexandre</option><option>Tiago</option><option>Anderson</option><option>Lucas</option><option>Todos</option>
+        </select>
       </div>
-    </footer>
+    </div>
+    <div class="form-row full"><div class="form-group"><label>Tarefa</label><input type="text" id="crono-tarefa" placeholder="ex: Assar pão de queijo — 2ª fornada"></div></div>
+    <div class="form-row full">
+      <div class="form-group"><label>Produto relacionado (opcional)</label>
+        <select id="crono-produto"><option value="">— nenhum —</option></select>
+      </div>
+    </div>
+    <div class="form-row full"><div class="form-group"><label>Quantidade a produzir</label><input type="number" id="crono-qty" min="0" value="0" placeholder="0 = sem quantidade específica"></div></div>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" onclick="closeModal('modal-crono')">Cancelar</button>
+      <button class="btn btn-primary" onclick="saveCrono()">Salvar</button>
+    </div>
+  </div>
+</div>
 
-    <!-- Lucide & Scripts -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script>
-      // Initialize Lucide Icons
-      lucide.createIcons();
+<!-- Modal: Perda -->
+<div class="modal-overlay" id="modal-perda">
+  <div class="modal">
+    <div class="modal-title">⚠️ Registrar Perda / Feedback</div>
+    <div class="form-row">
+      <div class="form-group"><label>Produto</label>
+        <select id="perda-produto"></select>
+      </div>
+      <div class="form-group"><label>Quantidade</label><input type="number" id="perda-qty" min="1" value="1"></div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label>Tipo</label>
+        <select id="perda-tipo">
+          <option value="vencimento">Vencimento / Estragou</option>
+          <option value="producao">Erro de produção</option>
+          <option value="cliente">Feedback de cliente</option>
+          <option value="acidente">Acidente (queda, etc.)</option>
+          <option value="outro">Outro</option>
+        </select>
+      </div>
+      <div class="form-group"><label>Data</label><input type="date" id="perda-data"></div>
+    </div>
+    <div class="form-row full"><div class="form-group"><label>Descrição / feedback</label><textarea id="perda-obs" placeholder="ex: A torta de frango do turno da manhã estragou porque ficou fora da geladeira..." rows="3"></textarea></div></div>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" onclick="closeModal('modal-perda')">Cancelar</button>
+      <button class="btn btn-red" onclick="savePerda()">Registrar Perda</button>
+    </div>
+  </div>
+</div>
 
-      // Menu Content
-      const SIGNATURE_MENU = [
-        {
-          id: "p1",
-          name: "Torta Holandesa",
-          description: "Sobremesa clássica, cremosa e delicada, preparada para adoçar encontros especiais.",
-          price: "Sob consulta",
-          priceNum: 0,
-          category: "confeitaria",
-          tag: "Sobremesa",
-          imageUrl: "https://res.cloudinary.com/ds53z2vv8/image/upload/v1780341928/IMG_1421_fosooo.jpg"
-        },
-        {
-          id: "p2",
-          name: "Pão de Bolinha",
-          description: "Nosso carro-chefe da padaria: montado com 30 bolinhas recheadas uma a uma, massa caseira deliciosa e produção todos os dias.",
-          price: "Sob consulta",
-          priceNum: 0,
-          category: "panificacao",
-          tag: "Carro-chefe",
-          imageUrl: "https://res.cloudinary.com/ds53z2vv8/image/upload/v1780341928/IMG_1335_fochhw.jpg"
-        },
-        {
-          id: "p3",
-          name: "Quindim",
-          description: "Brilho, textura macia e sabor tradicional em uma receita que lembra mesa de família.",
-          price: "Sob consulta",
-          priceNum: 0,
-          category: "confeitaria",
-          tag: "Clássico",
-          imageUrl: "https://res.cloudinary.com/ds53z2vv8/image/upload/v1780434408/quindim_eibkr6.jpg"
-        },
-        {
-          id: "p4",
-          name: "Brownie com Nozes",
-          description: "Brownie intenso, úmido e cheio de nozes, perfeito para acompanhar um café.",
-          price: "Sob consulta",
-          priceNum: 0,
-          category: "confeitaria",
-          tag: "Especial",
-          imageUrl: "https://res.cloudinary.com/ds53z2vv8/image/upload/v1780341926/IMG_1198_pgt0e9.jpg"
-        },
-        {
-          id: "p5",
-          name: "Eventos",
-          description: "Preparamos o espaço e os sabores para receber encontros, aniversários e celebrações com cuidado artesanal.",
-          price: "Sob consulta",
-          priceNum: 0,
-          category: "brunch",
-          tag: "Eventos",
-          imageUrl: "https://res.cloudinary.com/ds53z2vv8/image/upload/v1773768803/WhatsApp_Image_2026-03-17_at_14.29.44_1_zlp8x4.jpg"
-        },
-        {
-          id: "p6",
-          name: "Carolinas",
-          description: "Massa leve, recheio delicado e acabamento caprichado para uma doçura de vitrine.",
-          price: "Sob consulta",
-          priceNum: 0,
-          category: "confeitaria",
-          tag: "Doce fino",
-          imageUrl: "https://res.cloudinary.com/ds53z2vv8/image/upload/v1771019902/IMG_2878_ljd2im.jpg"
-        },
-        {
-          id: "p7",
-          name: "Chocotone",
-          description: "Massa macia, aroma de festa e muito chocolate para encomendas de época.",
-          price: "Sob consulta",
-          priceNum: 0,
-          category: "confeitaria",
-          tag: "Sazonal",
-          imageUrl: "https://res.cloudinary.com/ds53z2vv8/image/upload/v1771019880/IMG_1453_ibc7br.jpg"
-        },
-        {
-          id: "p8",
-          name: "Lanche na Baguete",
-          description: "Baguete fresquinha e recheio caprichado para um lanche saboroso, prático e bem servido.",
-          price: "Sob consulta",
-          priceNum: 0,
-          category: "panificacao",
-          tag: "Lanche",
-          imageUrl: "https://res.cloudinary.com/ds53z2vv8/image/upload/v1770058831/B0831590-43D0-48B8-80DC-BF637D97AD64_ihgvmr.png"
-        },
-        {
-          id: "p9",
-          name: "Tortas",
-          description: "Tortas preparadas com acabamento delicado e sabores pensados para dividir em bons momentos.",
-          price: "Sob consulta",
-          priceNum: 0,
-          category: "confeitaria",
-          tag: "Sobremesa",
-          imageUrl: "https://res.cloudinary.com/ds53z2vv8/image/upload/v1770056891/A7661BB4-D8A0-4754-9282-66670CFEA24D_y6kqjj.png"
-        }
-      ];
+<div class="toast" id="toast"></div>
 
-      // State Management
-      let cart = {};
-      let selectedCategory = "all";
-      let pickupUnit = "matriz";
+<script>
+// ============================================================
+// STATE
+// ============================================================
+let currentUnit = 'matriz';
+let currentDay = 'seg';
+let currentCronoDay = 'seg';
+let currentPedidoDay = 'seg';
+let vitrineView = 'grade';
 
-      // Selectors
-      const productsGrid = document.getElementById("products-grid");
-      const cartBar = document.getElementById("cart-floating-bar");
-      const cartCountIndicator = document.getElementById("cart-count-indicator");
-      const cartTotalIndicator = document.getElementById("cart-total-indicator");
-      const orderDrawerOverlay = document.getElementById("order-drawer-overlay");
-      const orderDrawer = document.getElementById("order-drawer");
-      const orderItemsList = document.getElementById("order-items-list");
-      const orderSummaryTotal = document.getElementById("order-summary-total");
+const dayNames = { seg:'Segunda-feira', ter:'Terça-feira', qua:'Quarta-feira', qui:'Quinta-feira', sex:'Sexta-feira', sab:'Sábado', dom:'Domingo' };
 
-      const mobileOverlay = document.getElementById("mobile-menu-overlay");
-      const mobileDrawer = document.getElementById("mobile-menu-drawer");
+// Layouts de vitrine por unidade (quantos slots)
+const vitrineLayouts = {
+  matriz: { slots: 12, cols: 3, label: 'Vitrine Principal — 12 posições (3×4)' },
+  vilanova: { slots: 9, cols: 3, label: 'Vitrine — 9 posições (3×3)' }
+};
 
-      // Startup
-      window.addEventListener("DOMContentLoaded", () => {
-        renderMenu();
-        updateCartUI();
-      });
+function getStorage(key, def) {
+  try { return JSON.parse(localStorage.getItem(key)) || def; } catch { return def; }
+}
+function setStorage(key, val) {
+  localStorage.setItem(key, JSON.stringify(val));
+}
 
-      // Tab Filtering
-      document.querySelectorAll("[data-category-tab]").forEach(tab => {
-        tab.addEventListener("click", () => {
-          document.querySelectorAll("[data-category-tab]").forEach(btn => {
-            btn.classList.add("bg-white", "border-primary-200/60", "text-[#6a5e53]", "hover:bg-primary-100/30");
-            btn.classList.remove("bg-primary-950", "border-primary-950", "text-white");
-          });
-          tab.classList.remove("bg-white", "border-primary-200/60", "text-[#6a5e53]");
-          tab.classList.add("bg-primary-950", "border-primary-950", "text-white");
-          selectedCategory = tab.getAttribute("data-category-tab");
-          renderMenu();
-        });
-      });
+let produtos = getStorage('ddv_produtos', [
+  { id: 1, nome: 'Torta de Frango', curva: 'A', validade: 2, categoria: 'Torta', custo: 18.00, preco: 38.00, resp: 'Alexandre', unidade: 'ambas', obs: '' },
+  { id: 2, nome: 'Pão de Queijo', curva: 'A', validade: 1, categoria: 'Pão', custo: 1.20, preco: 3.50, resp: 'Tiago', unidade: 'ambas', obs: '' },
+  { id: 3, nome: 'Bolo de Cenoura', curva: 'B', validade: 3, categoria: 'Bolo', custo: 14.00, preco: 28.00, resp: 'Anderson', unidade: 'ambas', obs: '' },
+  { id: 4, nome: 'Croissant', curva: 'B', validade: 1, categoria: 'Pão', custo: 3.50, preco: 8.00, resp: 'Lucas', unidade: 'matriz', obs: '' },
+  { id: 5, nome: 'Coxinha', curva: 'A', validade: 1, categoria: 'Salgado', custo: 2.00, preco: 5.50, resp: 'Tiago', unidade: 'ambas', obs: '' },
+]);
 
-      // Mobile Menu
-      document.getElementById("menu-toggle-btn").addEventListener("click", () => {
-        mobileOverlay.classList.remove("hidden");
-        setTimeout(() => mobileOverlay.classList.add("opacity-100"), 15);
-        mobileDrawer.classList.remove("translate-x-full");
-      });
+// vitrines[unit][day] = [{prodId, qty, slot}]
+let vitrines = getStorage('ddv_vitrines', {});
+// cronograma[unit][day] = [{hora, tarefa, resp, prodId, qty}]
+let cronograma = getStorage('ddv_cronograma', {});
+// perdas = [{id, prodId, qty, tipo, data, obs, unit}]
+let perdas = getStorage('ddv_perdas', []);
 
-      const closeMenu = () => {
-        mobileOverlay.classList.remove("opacity-100");
-        mobileDrawer.classList.add("translate-x-full");
-        setTimeout(() => mobileOverlay.classList.add("hidden"), 300);
-      };
+let nextId = getStorage('ddv_nextid', 10);
 
-      document.getElementById("menu-close-btn").addEventListener("click", closeMenu);
-      mobileOverlay.addEventListener("click", closeMenu);
-      document.querySelectorAll(".mobile-nav-link").forEach(link => {
-        link.addEventListener("click", closeMenu);
-      });
+function saveAll() {
+  setStorage('ddv_produtos', produtos);
+  setStorage('ddv_vitrines', vitrines);
+  setStorage('ddv_cronograma', cronograma);
+  setStorage('ddv_perdas', perdas);
+  setStorage('ddv_nextid', nextId);
+}
 
-      // Menu Maker
-      function renderMenu() {
-        productsGrid.innerHTML = "";
-        const visibleItems = selectedCategory === "all" 
-          ? SIGNATURE_MENU 
-          : SIGNATURE_MENU.filter(x => x.category === selectedCategory);
+// ============================================================
+// NAVIGATION
+// ============================================================
+function showPage(page) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('page-' + page).classList.add('active');
+  event.currentTarget.classList.add('active');
 
-        visibleItems.forEach(item => {
-          const qty = cart[item.id] || 0;
-          const card = document.createElement("div");
-          card.className = "bg-white rounded-[2.2rem] overflow-hidden border border-primary-200/60 hover:shadow-lg transition-all duration-300 flex flex-col justify-between group h-full";
-          
-          card.innerHTML = `
-            <div class="relative h-56 overflow-hidden">
-              <img src="${item.imageUrl}" alt="${item.name}" class="w-full h-full object-cover filter brightness-95 group-hover:scale-102 transition-transform duration-500" />
-              ${item.tag ? `
-                <span class="absolute top-4 left-4 bg-primary-100 text-primary-800 border border-primary-200/40 text-[9px] uppercase tracking-widest px-2.5 py-0.5 rounded-full z-10">${item.tag}</span>
-              ` : ""}
-            </div>
-            <div class="p-6 flex-1 flex flex-col justify-between space-y-5">
-              <div class="space-y-2">
-                <h4 class="font-serif text-base font-medium text-primary-950 leading-snug">${item.name}</h4>
-                <p class="text-text-light text-[11px] leading-relaxed font-light">${item.description}</p>
-              </div>
-              <div class="flex items-center justify-between pt-2">
-                <div>
-                  <span class="text-[8px] text-text-light uppercase tracking-wider block">Preço</span>
-                  <span class="text-sm text-primary-950 font-normal">${item.price}</span>
-                </div>
-                <div>
-                  ${qty > 0 ? `
-                    <div class="flex items-center space-x-1.5 bg-primary-100/80 border border-primary-200 rounded-full p-0.5">
-                      <button onclick="changeQty('${item.id}', -1)" class="h-6 w-6 hover:bg-white rounded-full flex items-center justify-center transition-all"><i data-lucide="minus" class="h-3 w-3"></i></button>
-                      <span class="text-xs font-normal w-5 text-center text-primary-950">${qty}</span>
-                      <button onclick="changeQty('${item.id}', 1)" class="h-6 w-6 hover:bg-white rounded-full flex items-center justify-center transition-all"><i data-lucide="plus" class="h-3 w-3"></i></button>
-                    </div>
-                  ` : `
-                    <button onclick="changeQty('${item.id}', 1)" class="bg-primary-50 text-text-light border border-primary-200 text-[9px] uppercase tracking-wider px-3.5 py-2 rounded-full hover:bg-primary-950 hover:text-white transition-all flex items-center gap-1.5">
-                      <i data-lucide="plus" class="h-3.5 w-3.5"></i>
-                      <span>Adicionar</span>
-                    </button>
-                  `}
-                </div>
-              </div>
-            </div>
-          `;
-          productsGrid.appendChild(card);
-        });
-        lucide.createIcons();
-      }
+  if (page === 'vitrine') renderVitrine();
+  if (page === 'cronograma') renderCronograma();
+  if (page === 'produtos') renderProdutos();
+  if (page === 'perdas') renderPerdas();
+  if (page === 'pedido') renderPedido();
+}
 
-      // Change Qty helper
-      window.changeQty = function(id, val) {
-        const next = (cart[id] || 0) + val;
-        if (next <= 0) {
-          delete cart[id];
-        } else {
-          cart[id] = next;
-        }
-        renderMenu();
-        updateCartUI();
-        if (!orderDrawer.classList.contains("translate-x-full")) {
-          renderDrawerItems();
-        }
-      };
+function setUnit(unit) {
+  currentUnit = unit;
+  document.querySelectorAll('.unit-btn').forEach(b => b.classList.remove('active'));
+  event.currentTarget.classList.add('active');
+  document.getElementById('vitrine-unidade-label').textContent =
+    `Unidade: ${unit === 'matriz' ? 'Matriz' : 'Vila Nova'} — clique em uma posição para adicionar produto`;
+  renderVitrine();
+  renderCronograma();
+  renderPedido();
+}
 
-      function updateCartUI() {
-        let count = 0;
-        let sum = 0;
-        Object.keys(cart).forEach(id => {
-          const item = SIGNATURE_MENU.find(x => x.id === id);
-          if (item) {
-            count += cart[id];
-            sum += item.priceNum * cart[id];
-          }
-        });
+// ============================================================
+// VITRINE
+// ============================================================
+function setDay(day) {
+  currentDay = day;
+  document.querySelectorAll('#day-tabs .day-tab').forEach(b => b.classList.remove('active'));
+  event.currentTarget.classList.add('active');
+  renderVitrine();
+}
 
-        if (count > 0) {
-          cartBar.classList.remove("hidden");
-          cartBar.classList.add("flex");
-          cartCountIndicator.innerText = count;
-          cartTotalIndicator.innerText = sum > 0 ? "R$ " + sum.toFixed(2).replace(".", ",") : "Sob consulta";
-        } else {
-          cartBar.classList.add("hidden");
-          cartBar.classList.remove("flex");
-        }
-      }
+function setVitrineView(view) {
+  vitrineView = view;
+  document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+  event.currentTarget.classList.add('active');
+  renderVitrine();
+}
 
-      // Drawer handlers
-      window.openOrderDrawer = function() {
-        orderDrawerOverlay.classList.remove("hidden");
-        setTimeout(() => orderDrawerOverlay.classList.add("opacity-100"), 10);
-        orderDrawer.classList.remove("translate-x-full");
-        renderDrawerItems();
-      };
+function getVitrine() {
+  if (!vitrines[currentUnit]) vitrines[currentUnit] = {};
+  if (!vitrines[currentUnit][currentDay]) vitrines[currentUnit][currentDay] = [];
+  return vitrines[currentUnit][currentDay];
+}
 
-      window.closeOrderDrawer = function() {
-        orderDrawerOverlay.classList.remove("opacity-100");
-        orderDrawer.classList.add("translate-x-full");
-        setTimeout(() => orderDrawerOverlay.classList.add("hidden"), 300);
-      };
+function renderVitrine() {
+  const layout = vitrineLayouts[currentUnit];
+  const slots = layout.slots;
+  const cols = layout.cols;
+  const vitrine = getVitrine();
 
-      window.setPickupUnit = function(unit) {
-        pickupUnit = unit;
-        document.querySelectorAll("[data-unit-select]").forEach(btn => {
-          btn.classList.add("border-primary-200", "text-text-light", "hover:bg-[#FAF6F0]");
-          btn.classList.remove("bg-primary-950", "border-primary-950", "text-white");
-        });
-        const currentBtn = document.querySelector(`[data-unit-select="${unit}"]`);
-        if (currentBtn) {
-          currentBtn.classList.remove("border-primary-200", "text-text-light", "hover:bg-[#FAF6F0]");
-          currentBtn.classList.add("bg-primary-950", "border-primary-950", "text-white");
-        }
-      };
+  // Grade
+  const grid = document.getElementById('vitrine-grid');
+  grid.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
+  grid.innerHTML = '';
 
-      function renderDrawerItems() {
-        orderItemsList.innerHTML = "";
-        const keys = Object.keys(cart);
-        let sum = 0;
+  for (let i = 1; i <= slots; i++) {
+    const item = vitrine.find(v => v.slot === i);
+    const prod = item ? produtos.find(p => p.id === item.prodId) : null;
+    const div = document.createElement('div');
+    div.className = 'vitrine-slot ' + (item ? 'filled' : 'empty');
+    div.innerHTML = `<span class="slot-num">${i}</span>`;
+    if (item && prod) {
+      div.innerHTML += `
+        <div class="slot-content">
+          <div class="slot-name">${prod.nome}</div>
+          <div class="slot-qty">${item.qty} un.</div>
+        </div>
+        <span class="slot-remove" onclick="removeSlot(${i}, event)">×</span>`;
+    } else {
+      div.innerHTML += `<span class="slot-plus" style="margin:auto;color:var(--border);font-size:20px;">+</span>`;
+      div.onclick = () => openSlotModal(i);
+    }
+    if (item && prod) div.onclick = () => openSlotModal(i, vitrine.indexOf(item));
+    grid.appendChild(div);
+  }
 
-        if (keys.length === 0) {
-          orderItemsList.innerHTML = `
-            <div class="text-center py-16 text-text-light flex flex-col items-center justify-center space-y-3">
-              <i data-lucide="shopping-bag" class="h-8 w-8 text-primary-300"></i>
-              <p class="text-xs font-light">Seu carrinho de encomendas está vazio.</p>
-            </div>
-          `;
-          orderSummaryTotal.innerText = "R$ 0,00";
-          lucide.createIcons();
-          return;
-        }
+  // Lista
+  const list = document.getElementById('vitrine-list');
+  if (vitrine.length === 0) {
+    list.innerHTML = '<div class="empty-state"><div class="empty-icon">🪟</div><p>Nenhum produto na vitrine este dia</p></div>';
+  } else {
+    list.innerHTML = vitrine.slice().sort((a,b) => a.slot - b.slot).map((item, idx) => {
+      const prod = produtos.find(p => p.id === item.prodId);
+      if (!prod) return '';
+      return `<div class="vitrine-list-item">
+        <div class="li-num">${item.slot}</div>
+        <div class="li-name">${prod.nome}</div>
+        <span class="badge badge-${prod.curva.toLowerCase()}">${prod.curva}</span>
+        <div class="li-qty">${item.qty} un.</div>
+        <button class="btn btn-ghost btn-sm" onclick="removeSlotByProd(${item.prodId})">×</button>
+      </div>`;
+    }).join('');
+  }
+}
 
-        keys.forEach(id => {
-          const item = SIGNATURE_MENU.find(x => x.id === id);
-          if (item) {
-            const rowSum = item.priceNum * cart[id];
-            sum += rowSum;
-            const itemRow = document.createElement("div");
-            itemRow.className = "flex justify-between items-center bg-white p-4 rounded-xl border border-primary-100";
-            itemRow.innerHTML = `
-              <div class="flex-1 pr-3">
-                <h5 class="text-xs font-medium text-primary-900 leading-tight">${item.name}</h5>
-                <span class="text-[10px] text-text-light">Unidade: ${item.price}</span>
-              </div>
-              <div class="flex items-center space-x-3.5">
-                <div class="flex items-center bg-primary-50 rounded-full border border-primary-200 p-0.5">
-                  <button onclick="changeQty('${item.id}', -1)" class="h-5.5 w-5.5 hover:bg-white rounded-full flex items-center justify-center"><i data-lucide="minus" class="h-2.5 w-2.5 text-primary-800"></i></button>
-                  <span class="text-xs w-4 text-center text-primary-950">${cart[id]}</span>
-                  <button onclick="changeQty('${item.id}', 1)" class="h-5.5 w-5.5 hover:bg-white rounded-full flex items-center justify-center"><i data-lucide="plus" class="h-2.5 w-2.5 text-primary-800"></i></button>
-                </div>
-                <span class="text-xs text-primary-950 w-20 text-right">${rowSum > 0 ? "R$ " + rowSum.toFixed(2).replace(".", ",") : "Consultar"}</span>
-              </div>
-            `;
-            orderItemsList.appendChild(itemRow);
-          }
-        });
+function openSlotModal(slotNum, editIdx) {
+  // Preencher select de produtos
+  const sel = document.getElementById('slot-produto');
+  const filtered = produtos.filter(p => p.unidade === 'ambas' || p.unidade === currentUnit);
+  sel.innerHTML = filtered.map(p => `<option value="${p.id}">${p.nome} (${p.curva})</option>`).join('');
 
-        orderSummaryTotal.innerText = sum > 0 ? "R$ " + sum.toFixed(2).replace(".", ",") : "Sob consulta";
-        lucide.createIcons();
-      }
+  document.getElementById('slot-pos').value = slotNum || 1;
+  document.getElementById('slot-qty').value = 1;
+  document.getElementById('slot-edit-idx').value = editIdx !== undefined ? editIdx : '';
 
-      // Checkout via Whats
-      window.handleWhatsappOrder = function() {
-        const keys = Object.keys(cart);
-        if (keys.length === 0) return;
+  if (editIdx !== undefined) {
+    const vitrine = getVitrine();
+    const item = vitrine[editIdx];
+    if (item) {
+      sel.value = item.prodId;
+      document.getElementById('slot-qty').value = item.qty;
+      document.getElementById('slot-pos').value = item.slot;
+    }
+  }
 
-        let total = 0;
-        let listMsg = "";
-        keys.forEach(id => {
-          const item = SIGNATURE_MENU.find(x => x.id === id);
-          if (item) {
-            const qty = cart[id];
-            const sum = item.priceNum * qty;
-            total += sum;
-            listMsg += `• ${qty}x ${item.name} (${item.price})\n`;
-          }
-        });
+  openModal('modal-slot');
+}
 
-        const place = pickupUnit === "matriz" ? "Unidade Matriz" : "Cafeteria Vila Nova";
-        const totalMsg = total > 0 ? "R$ " + total.toFixed(2).replace(".", ",") : "Sob consulta";
-        const message = `Olá! Desejo realizar uma encomenda para retirar na *${place}*:\n\n${listMsg}\n*Total Estimado:* ${totalMsg}\n*Retirada:* Cortesia do Estabelecimento\n\nPor favor, confirmem o pedido!`;
-        
-        const tel = pickupUnit === "matriz" ? "551134567890" : "551134567891";
-        window.open(`https://wa.me/${tel}?text=${encodeURIComponent(message)}`, "_blank");
-      };
+function saveSlot() {
+  const prodId = parseInt(document.getElementById('slot-produto').value);
+  const qty = parseInt(document.getElementById('slot-qty').value) || 1;
+  const pos = parseInt(document.getElementById('slot-pos').value) || 1;
+  const editIdx = document.getElementById('slot-edit-idx').value;
 
-      // Toast Feedback Msg
-      window.handleSendFeedback = function(e) {
-        e.preventDefault();
-        const name = document.getElementById("feedback-name").value.trim();
-        const msg = document.getElementById("feedback-msg").value.trim();
-        if (!name || !msg) return;
+  if (!prodId) return;
 
-        // Toast feedback info
-        let toast = document.createElement("div");
-        toast.className = "fixed bottom-24 left-1/2 transform -translate-x-1/2 bg-emerald-50 border border-emerald-200 text-emerald-800 p-4 rounded-full text-xs font-light shadow-lg flex items-center gap-2 z-50 transition-all duration-300 opacity-0 translate-y-3";
-        toast.innerHTML = `<i data-lucide="heart" class="h-4 w-4 fill-current text-red-400"></i> Mensagem enviada com carinho, obrigado ${name}!`;
-        document.body.appendChild(toast);
-        lucide.createIcons();
+  const vitrine = getVitrine();
 
-        setTimeout(() => {
-          toast.classList.remove("opacity-0", "translate-y-3");
-        }, 15);
+  // Remove existing at this slot
+  const existingIdx = vitrine.findIndex(v => v.slot === pos);
+  if (existingIdx >= 0) vitrine.splice(existingIdx, 1);
 
-        setTimeout(() => {
-          toast.classList.add("opacity-0", "translate-y-3");
-          setTimeout(() => toast.remove(), 400);
-        }, 4000);
+  if (editIdx !== '') {
+    const oldItem = vitrine.find((v, i) => i == editIdx);
+  }
 
-        document.getElementById("feedback-name").value = "";
-        document.getElementById("feedback-msg").value = "";
-      };
+  vitrine.push({ prodId, qty, slot: pos });
+  saveAll();
+  closeModal('modal-slot');
+  renderVitrine();
+  showToast('Produto adicionado à vitrine ✓', 'success');
+}
 
-      // Simple sticky header background styling on scroll
-      window.addEventListener("scroll", () => {
-        const header = document.getElementById("main-header");
-        if (window.scrollY > 50) {
-          header.classList.add("shadow-md", "py-2.5");
-          header.classList.remove("py-3.5");
-        } else {
-          header.classList.remove("shadow-md", "py-2.5");
-          header.classList.add("py-3.5");
-        }
-      });
-    </script>
-  </body>
+function removeSlot(slotNum, e) {
+  e.stopPropagation();
+  const vitrine = getVitrine();
+  const idx = vitrine.findIndex(v => v.slot === slotNum);
+  if (idx >= 0) vitrine.splice(idx, 1);
+  saveAll();
+  renderVitrine();
+}
+
+function removeSlotByProd(prodId) {
+  const vitrine = getVitrine();
+  const idx = vitrine.findIndex(v => v.prodId === prodId);
+  if (idx >= 0) vitrine.splice(idx, 1);
+  saveAll();
+  renderVitrine();
+}
+
+function openAddSlotModal() {
+  openSlotModal(null);
+}
+
+// ============================================================
+// CRONOGRAMA
+// ============================================================
+function setCronoDay(day) {
+  currentCronoDay = day;
+  document.querySelectorAll('#crono-day-tabs .day-tab').forEach(b => b.classList.remove('active'));
+  event.currentTarget.classList.add('active');
+  renderCronograma();
+}
+
+function getCrono() {
+  if (!cronograma[currentUnit]) cronograma[currentUnit] = {};
+  if (!cronograma[currentUnit][currentCronoDay]) cronograma[currentUnit][currentCronoDay] = [];
+  return cronograma[currentUnit][currentCronoDay];
+}
+
+function renderCronograma() {
+  const crono = getCrono();
+  const list = document.getElementById('cronograma-list');
+
+  if (crono.length === 0) {
+    list.innerHTML = '<div class="empty-state"><div class="empty-icon">⏱</div><p>Nenhuma tarefa cadastrada para este dia</p></div>';
+    return;
+  }
+
+  const sorted = [...crono].sort((a, b) => a.hora.localeCompare(b.hora));
+  list.innerHTML = sorted.map((t, idx) => {
+    const prod = t.prodId ? produtos.find(p => p.id === t.prodId) : null;
+    return `<div class="cronograma-row">
+      <div class="crono-time">${t.hora}</div>
+      <div>
+        <div class="crono-task">${t.tarefa}${prod ? ` <span style="color:var(--brown-light)">(${prod.nome})</span>` : ''}</div>
+        ${t.qty ? `<div style="font-size:11px;color:var(--text-light);">Qtd: ${t.qty} un.</div>` : ''}
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <span class="badge badge-yellow">${t.resp}</span>
+        <button class="btn btn-ghost btn-sm" onclick="removeCrono(${idx})">×</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function openCronoModal() {
+  const sel = document.getElementById('crono-produto');
+  sel.innerHTML = '<option value="">— nenhum —</option>' + produtos.map(p => `<option value="${p.id}">${p.nome}</option>`).join('');
+  document.getElementById('crono-hora').value = '';
+  document.getElementById('crono-tarefa').value = '';
+  document.getElementById('crono-qty').value = 0;
+  openModal('modal-crono');
+}
+
+function saveCrono() {
+  const hora = document.getElementById('crono-hora').value;
+  const tarefa = document.getElementById('crono-tarefa').value.trim();
+  const resp = document.getElementById('crono-resp').value;
+  const prodId = document.getElementById('crono-produto').value ? parseInt(document.getElementById('crono-produto').value) : null;
+  const qty = parseInt(document.getElementById('crono-qty').value) || 0;
+
+  if (!hora || !tarefa) return showToast('Preencha horário e tarefa', 'error');
+
+  getCrono().push({ hora, tarefa, resp, prodId, qty });
+  saveAll();
+  closeModal('modal-crono');
+  renderCronograma();
+  showToast('Tarefa adicionada ✓', 'success');
+}
+
+function removeCrono(idx) {
+  getCrono().splice(idx, 1);
+  saveAll();
+  renderCronograma();
+}
+
+// ============================================================
+// PRODUTOS
+// ============================================================
+function renderProdutos() {
+  const search = document.getElementById('filter-search').value.toLowerCase();
+  const curvaFilter = document.getElementById('filter-curva').value;
+
+  const filtered = produtos.filter(p =>
+    (!curvaFilter || p.curva === curvaFilter) &&
+    (!search || p.nome.toLowerCase().includes(search))
+  );
+
+  const tbody = document.getElementById('produtos-tbody');
+  tbody.innerHTML = filtered.map(p => `
+    <tr>
+      <td>
+        <div style="font-weight:600;">${p.nome}</div>
+        <div style="font-size:11px;color:var(--text-light);">${p.categoria}</div>
+      </td>
+      <td><span class="badge badge-${p.curva.toLowerCase()}">${p.curva}</span></td>
+      <td>${p.validade} dia${p.validade > 1 ? 's' : ''}</td>
+      <td>${p.resp}</td>
+      <td>R$ ${(p.custo||0).toFixed(2)}</td>
+      <td>R$ ${(p.preco||0).toFixed(2)}</td>
+      <td>
+        <button class="btn btn-ghost btn-sm" onclick="editProduto(${p.id})">✏️</button>
+        <button class="btn btn-ghost btn-sm" onclick="deleteProduto(${p.id})" style="color:var(--red)">🗑</button>
+      </td>
+    </tr>
+  `).join('') || `<tr><td colspan="7" style="text-align:center;padding:30px;color:var(--text-light);">Nenhum produto encontrado</td></tr>`;
+
+  // Stats
+  document.getElementById('stat-total').textContent = produtos.length;
+  document.getElementById('stat-a').textContent = produtos.filter(p => p.curva === 'A').length;
+  document.getElementById('stat-b').textContent = produtos.filter(p => p.curva === 'B').length;
+  document.getElementById('stat-c').textContent = produtos.filter(p => p.curva === 'C').length;
+
+  const total = produtos.length || 1;
+  const pA = (produtos.filter(p => p.curva==='A').length / total * 100).toFixed(0);
+  const pB = (produtos.filter(p => p.curva==='B').length / total * 100).toFixed(0);
+  const pC = (100 - pA - pB);
+  const bar = document.getElementById('abc-bar');
+  bar.children[0].style.width = pA + '%';
+  bar.children[1].style.width = pB + '%';
+  bar.children[2].style.width = Math.max(0, pC) + '%';
+}
+
+function openProdModal(prod) {
+  document.getElementById('p-id').value = prod ? prod.id : '';
+  document.getElementById('p-nome').value = prod ? prod.nome : '';
+  document.getElementById('p-curva').value = prod ? prod.curva : 'A';
+  document.getElementById('p-validade').value = prod ? prod.validade : '';
+  document.getElementById('p-categoria').value = prod ? prod.categoria : 'Bolo';
+  document.getElementById('p-custo').value = prod ? prod.custo : '';
+  document.getElementById('p-preco').value = prod ? prod.preco : '';
+  document.getElementById('p-resp').value = prod ? prod.resp : 'Alexandre';
+  document.getElementById('p-unidade').value = prod ? prod.unidade : 'ambas';
+  document.getElementById('p-obs').value = prod ? prod.obs : '';
+  document.getElementById('modal-produto-title').textContent = prod ? 'Editar Produto' : 'Novo Produto';
+  openModal('modal-produto');
+}
+
+function editProduto(id) {
+  const prod = produtos.find(p => p.id === id);
+  if (prod) openProdModal(prod);
+}
+
+function deleteProduto(id) {
+  if (!confirm('Remover este produto?')) return;
+  produtos = produtos.filter(p => p.id !== id);
+  saveAll();
+  renderProdutos();
+  showToast('Produto removido', 'error');
+}
+
+function saveProduto() {
+  const id = document.getElementById('p-id').value;
+  const nome = document.getElementById('p-nome').value.trim();
+  if (!nome) return showToast('Informe o nome do produto', 'error');
+
+  const data = {
+    nome,
+    curva: document.getElementById('p-curva').value,
+    validade: parseInt(document.getElementById('p-validade').value) || 1,
+    categoria: document.getElementById('p-categoria').value,
+    custo: parseFloat(document.getElementById('p-custo').value) || 0,
+    preco: parseFloat(document.getElementById('p-preco').value) || 0,
+    resp: document.getElementById('p-resp').value,
+    unidade: document.getElementById('p-unidade').value,
+    obs: document.getElementById('p-obs').value,
+  };
+
+  if (id) {
+    const idx = produtos.findIndex(p => p.id == id);
+    produtos[idx] = { ...produtos[idx], ...data };
+  } else {
+    data.id = ++nextId;
+    produtos.push(data);
+  }
+
+  saveAll();
+  closeModal('modal-produto');
+  renderProdutos();
+  showToast('Produto salvo ✓', 'success');
+}
+
+// ============================================================
+// PERDAS
+// ============================================================
+function renderPerdas() {
+  const tipoFilter = document.getElementById('filter-perda-tipo').value;
+  const filtered = perdas.filter(p =>
+    p.unit === currentUnit &&
+    (!tipoFilter || p.tipo === tipoFilter)
+  );
+
+  // Stats
+  const agora = new Date();
+  const mesAtual = perdas.filter(p => {
+    const d = new Date(p.data);
+    return p.unit === currentUnit && d.getMonth() === agora.getMonth() && d.getFullYear() === agora.getFullYear();
+  });
+  const totalCusto = mesAtual.reduce((sum, p) => {
+    const prod = produtos.find(pr => pr.id === p.prodId);
+    return sum + (prod ? prod.custo * p.qty : 0);
+  }, 0);
+  document.getElementById('perdas-total-mes').textContent = `R$ ${totalCusto.toFixed(2)}`;
+  document.getElementById('perdas-qtd').textContent = mesAtual.length;
+
+  // Top produto perdido
+  const contProd = {};
+  mesAtual.forEach(p => { contProd[p.prodId] = (contProd[p.prodId] || 0) + p.qty; });
+  const topProdId = Object.keys(contProd).sort((a,b) => contProd[b]-contProd[a])[0];
+  const topProd = topProdId ? produtos.find(p => p.id == topProdId) : null;
+  document.getElementById('perdas-produto-top').textContent = topProd ? topProd.nome.split(' ')[0] : '—';
+
+  const contMotivo = {};
+  mesAtual.forEach(p => { contMotivo[p.tipo] = (contMotivo[p.tipo] || 0) + 1; });
+  const topMotivo = Object.keys(contMotivo).sort((a,b) => contMotivo[b]-contMotivo[a])[0];
+  const motivoLabel = { vencimento: 'Vencido', producao: 'Produção', cliente: 'Cliente', acidente: 'Acidente', outro: 'Outro' };
+  document.getElementById('perdas-motivo-top').textContent = topMotivo ? motivoLabel[topMotivo] : '—';
+
+  // List
+  const list = document.getElementById('perdas-list');
+  if (filtered.length === 0) {
+    list.innerHTML = '<div class="empty-state"><div class="empty-icon">✅</div><p>Sem registros de perdas para este filtro</p></div>';
+    return;
+  }
+
+  const tipoIcon = { vencimento: '🕐', producao: '⚙️', cliente: '💬', acidente: '💥', outro: '📝' };
+  list.innerHTML = filtered.slice().reverse().map((p, idx) => {
+    const prod = produtos.find(pr => pr.id === p.prodId);
+    const custo = prod ? (prod.custo * p.qty).toFixed(2) : '0.00';
+    const dataFmt = new Date(p.data + 'T12:00').toLocaleDateString('pt-BR');
+    return `<div class="perda-item">
+      <span class="perda-icon">${tipoIcon[p.tipo] || '📝'}</span>
+      <div class="perda-info">
+        <div class="perda-name">${prod ? prod.nome : 'Produto removido'} — ${p.qty} un.</div>
+        <div class="perda-detail">${motivoLabel[p.tipo]} · ${dataFmt} · ${p.obs || '—'}</div>
+      </div>
+      <div class="perda-custo">- R$ ${custo}</div>
+      <button class="btn btn-ghost btn-sm" onclick="removePerda(${perdas.indexOf(p)})" style="color:var(--red)">×</button>
+    </div>`;
+  }).join('');
+}
+
+function openPerdaModal() {
+  const sel = document.getElementById('perda-produto');
+  const filtered = produtos.filter(p => p.unidade === 'ambas' || p.unidade === currentUnit);
+  sel.innerHTML = filtered.map(p => `<option value="${p.id}">${p.nome}</option>`).join('');
+  document.getElementById('perda-data').value = new Date().toISOString().split('T')[0];
+  document.getElementById('perda-qty').value = 1;
+  document.getElementById('perda-obs').value = '';
+  openModal('modal-perda');
+}
+
+function savePerda() {
+  const prodId = parseInt(document.getElementById('perda-produto').value);
+  const qty = parseInt(document.getElementById('perda-qty').value) || 1;
+  const tipo = document.getElementById('perda-tipo').value;
+  const data = document.getElementById('perda-data').value;
+  const obs = document.getElementById('perda-obs').value.trim();
+
+  perdas.push({ id: ++nextId, prodId, qty, tipo, data, obs, unit: currentUnit });
+  saveAll();
+  closeModal('modal-perda');
+  renderPerdas();
+  showToast('Perda registrada ⚠️', 'error');
+}
+
+function removePerda(idx) {
+  if (!confirm('Remover este registro?')) return;
+  perdas.splice(idx, 1);
+  saveAll();
+  renderPerdas();
+}
+
+// ============================================================
+// PEDIDO DE PRODUÇÃO
+// ============================================================
+function setPedidoDay(day) {
+  currentPedidoDay = day;
+  document.querySelectorAll('#pedido-day-tabs .day-tab').forEach(b => b.classList.remove('active'));
+  event.currentTarget.classList.add('active');
+  renderPedido();
+}
+
+function renderPedido() {
+  document.getElementById('pedido-title').textContent = `Produção — ${dayNames[currentPedidoDay]}`;
+  document.getElementById('pedido-unidade').textContent = currentUnit === 'matriz' ? 'Matriz' : 'Vila Nova';
+
+  // Coleta dados
+  const vitrine = (vitrines[currentUnit] && vitrines[currentUnit][currentPedidoDay]) || [];
+  const crono = (cronograma[currentUnit] && cronograma[currentUnit][currentPedidoDay]) || [];
+
+  // Mapa de quantidades: prodId -> {qtyVitrine, qtyCrono, resp, hora}
+  const mapa = {};
+
+  vitrine.forEach(v => {
+    if (!mapa[v.prodId]) mapa[v.prodId] = { qtyVitrine: 0, qtyCrono: 0, resp: null, hora: null };
+    mapa[v.prodId].qtyVitrine += v.qty;
+  });
+
+  crono.forEach(c => {
+    if (!c.prodId || !c.qty) return;
+    if (!mapa[c.prodId]) mapa[c.prodId] = { qtyVitrine: 0, qtyCrono: 0, resp: null, hora: null };
+    mapa[c.prodId].qtyCrono += c.qty;
+    mapa[c.prodId].resp = c.resp;
+    mapa[c.prodId].hora = c.hora;
+  });
+
+  // Calcular reposição baseada em perdas (últimas 4 semanas)
+  const perdasProd = {};
+  const cutoff = new Date(); cutoff.setDate(cutoff.getDate() - 28);
+  perdas.filter(p => p.unit === currentUnit && new Date(p.data) > cutoff).forEach(p => {
+    perdasProd[p.prodId] = (perdasProd[p.prodId] || 0) + p.qty;
+  });
+
+  const list = document.getElementById('pedido-list');
+
+  if (Object.keys(mapa).length === 0) {
+    list.innerHTML = '<div class="empty-state" style="padding:30px;"><div class="empty-icon">📋</div><p>Nenhum produto planejado para este dia.<br>Cadastre itens na vitrine ou cronograma.</p></div>';
+    document.getElementById('pedido-obs').innerHTML = '';
+    return;
+  }
+
+  let html = '';
+  let totalItems = 0;
+  let obsHtml = '';
+
+  // Ordena por curva ABC
+  const curvaOrder = { A: 0, B: 1, C: 2 };
+  const entries = Object.entries(mapa).sort((a, b) => {
+    const pA = produtos.find(p => p.id == a[0]);
+    const pB = produtos.find(p => p.id == b[0]);
+    return (curvaOrder[pA?.curva] || 2) - (curvaOrder[pB?.curva] || 2);
+  });
+
+  entries.forEach(([prodId, d]) => {
+    const prod = produtos.find(p => p.id == prodId);
+    if (!prod) return;
+
+    const qtdBase = Math.max(d.qtyVitrine, d.qtyCrono);
+    const reposicao = Math.ceil((perdasProd[prodId] || 0) / 4); // média semanal de perdas
+    const resp = d.resp || prod.resp;
+    const hora = d.hora || '—';
+
+    html += `<div class="pedido-item">
+      <div>
+        <div class="prod-name">${prod.nome} <span class="badge badge-${prod.curva.toLowerCase()}">${prod.curva}</span></div>
+        <div class="prod-resp">${prod.categoria}</div>
+      </div>
+      <div><strong>${qtdBase}</strong></div>
+      <div style="color:var(--red-light)">${reposicao > 0 ? '+' + reposicao : '—'}</div>
+      <div>${resp}</div>
+      <div>${hora}</div>
+    </div>`;
+
+    if (prod.validade <= 1) {
+      obsHtml += `<div style="font-size:12px;color:var(--red);margin-bottom:4px;">⚠️ <strong>${prod.nome}</strong> — validade curta (${prod.validade} dia). Produzir somente no dia.</div>`;
+    }
+    totalItems++;
+  });
+
+  list.innerHTML = html;
+
+  document.getElementById('pedido-obs').innerHTML = obsHtml ? `
+    <div class="card" style="border-left:4px solid var(--red);padding:14px 16px;">
+      <div style="font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:0.5px;color:var(--red);margin-bottom:8px;">⚠️ Atenção — Validades Curtas</div>
+      ${obsHtml}
+    </div>` : '';
+}
+
+function imprimirPedido() {
+  window.print();
+}
+
+// ============================================================
+// MODAL HELPERS
+// ============================================================
+function openModal(id) { document.getElementById(id).classList.add('open'); }
+function closeModal(id) { document.getElementById(id).classList.remove('open'); }
+
+document.querySelectorAll('.modal-overlay').forEach(overlay => {
+  overlay.addEventListener('click', function(e) {
+    if (e.target === this) this.classList.remove('open');
+  });
+});
+
+// ============================================================
+// TOAST
+// ============================================================
+let toastTimer;
+function showToast(msg, type = 'success') {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = `toast toast-${type} show`;
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('show'), 2800);
+}
+
+// ============================================================
+// INIT
+// ============================================================
+renderProdutos();
+renderVitrine();
+</script>
+</body>
 </html>
