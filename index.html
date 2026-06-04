@@ -67,6 +67,25 @@
       ::-webkit-scrollbar-thumb:hover {
         background: #bfa07a;
       }
+      @media (max-width: 639px) {
+        .hero-mobile-frame {
+          min-height: 88svh;
+          align-items: flex-end;
+          padding-bottom: 7vh;
+        }
+        .hero-mobile-image {
+          object-position: center 58%;
+        }
+        .hero-mobile-copy {
+          transform: translateY(0);
+          margin-bottom: 0;
+        }
+        .hero-mobile-title {
+          font-size: clamp(2.2rem, 12vw, 3.25rem);
+          line-height: 1.04;
+          max-width: 9ch;
+        }
+      }
     </style>
   </head>
   <body class="bg-[#faf7f2] selection:bg-primary-200">
@@ -132,18 +151,18 @@
     </div>
 
     <!-- Hero Section -->
-    <section id="inicio" class="relative min-h-screen flex items-end justify-center pt-24 pb-[10vh] sm:pb-[12vh] overflow-hidden bg-[#faf7f2]">
+    <section id="inicio" class="hero-mobile-frame relative min-h-screen flex items-end justify-center pt-24 pb-[10vh] sm:pb-[12vh] overflow-hidden bg-[#faf7f2]">
       <div class="absolute inset-0 z-0">
         <img 
           src="https://res.cloudinary.com/ds53z2vv8/image/upload/v1780353080/copy_of_img_1213_of0ppv.jpg" 
           alt="Pães artesanais na cestaria" 
-          class="w-full h-full object-cover object-[center_43%] sm:object-center scale-100 transition-transform duration-1000"
+          class="hero-mobile-image w-full h-full object-cover object-[center_43%] sm:object-center scale-100 transition-transform duration-1000"
         />
         <div class="absolute inset-0 bg-black/38"></div>
         <div class="absolute inset-0 bg-gradient-to-t from-black/58 via-black/16 to-black/26"></div>
       </div>
 
-      <div class="relative z-10 max-w-5xl mx-auto px-6 text-center space-y-6 lg:translate-y-1">
+      <div class="hero-mobile-copy relative z-10 max-w-5xl mx-auto px-6 text-center space-y-6 lg:translate-y-1">
         <div class="flex justify-center items-center space-x-3 -translate-y-2">
           <div class="h-px w-8 bg-white/55"></div>
           <span class="font-sans text-[10px] sm:text-xs uppercase tracking-[0.35em] font-normal text-white/90 block">
@@ -152,7 +171,7 @@
           <div class="h-px w-8 bg-white/55"></div>
         </div>
 
-        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-display font-extralight text-white/95 tracking-[0.06em] leading-[1.1] max-w-4xl mx-auto normal-case -translate-y-3">
+        <h1 class="hero-mobile-title text-4xl sm:text-6xl lg:text-7xl font-display font-extralight text-white/95 tracking-[0.06em] leading-[1.1] max-w-4xl mx-auto normal-case -translate-y-3">
           Paixão em servir
         </h1>
 
@@ -218,7 +237,7 @@
                 <i data-lucide="map-pin" class="h-4.5 w-4.5 text-primary-600 shrink-0 mt-0.5"></i>
                 <div>
                   <span class="text-[9px] font-normal text-text-light uppercase tracking-widest block mb-0.5">Endereço</span>
-                  <span class="font-normal text-text-dark block">Av. Principal do Afeto, 2005 - Centro. Tel: (11) 3456-7890</span>
+                  <span class="font-normal text-text-dark block">Rua Padre Bartolomeu Tadei, 412 - Bairro Alto, Itu - SP. Tel: (11) 4013-5248</span>
                 </div>
               </div>
             </div>
@@ -260,7 +279,7 @@
                 <i data-lucide="map-pin" class="h-4.5 w-4.5 text-primary-600 shrink-0 mt-0.5"></i>
                 <div>
                   <span class="text-[9px] font-normal text-text-light uppercase tracking-widest block mb-0.5">Endereço</span>
-                  <span class="font-normal text-text-dark block">Rua das Amendoeiras, 452 - Vila Nova. Tel: (11) 3456-7891</span>
+                  <span class="font-normal text-text-dark block">Rua Luis Gonzaga Bicudo, 939 - Vila Nova, Complexo Unicenter, Itu - SP. Tel: (11) 4025-4474</span>
                 </div>
               </div>
             </div>
@@ -592,11 +611,11 @@
           <ul class="space-y-2 text-xs text-[#eedec6]/75 leading-relaxed font-light">
             <li class="flex items-start space-x-2">
               <i data-lucide="map-pin" class="h-4 w-4 shrink-0 text-primary-450"></i>
-              <span>Av. Principal do Afeto, 2005 - Centro</span>
+              <span>Rua Padre Bartolomeu Tadei, 412 - Bairro Alto, Itu - SP</span>
             </li>
             <li class="flex items-start space-x-2">
               <i data-lucide="phone" class="h-4 w-4 shrink-0 text-primary-450"></i>
-              <span>(11) 3456-7890</span>
+              <span>(11) 4013-5248</span>
             </li>
           </ul>
         </div>
@@ -606,11 +625,11 @@
           <ul class="space-y-2 text-xs text-[#eedec6]/75 leading-relaxed font-light">
             <li class="flex items-start space-x-2">
               <i data-lucide="map-pin" class="h-4 w-4 shrink-0 text-primary-450"></i>
-              <span>Rua das Amendoeiras, 452 - Vila Nova</span>
+              <span>Rua Luis Gonzaga Bicudo, 939 - Vila Nova, Complexo Unicenter, Itu - SP</span>
             </li>
             <li class="flex items-start space-x-2">
               <i data-lucide="phone" class="h-4 w-4 shrink-0 text-primary-450"></i>
-              <span>(11) 3456-7891</span>
+              <span>(11) 4025-4474</span>
             </li>
           </ul>
         </div>
@@ -988,7 +1007,7 @@
         const totalMsg = total > 0 ? "R$ " + total.toFixed(2).replace(".", ",") : "Sob consulta";
         const message = `Olá! Desejo realizar uma encomenda para retirar na *${place}*:\n\n${listMsg}\n*Total Estimado:* ${totalMsg}\n*Retirada:* Cortesia do Estabelecimento\n\nPor favor, confirmem o pedido!`;
         
-        const tel = pickupUnit === "matriz" ? "551134567890" : "551134567891";
+        const tel = pickupUnit === "matriz" ? "551140135248" : "551140254474";
         window.open(`https://wa.me/${tel}?text=${encodeURIComponent(message)}`, "_blank");
       };
 
